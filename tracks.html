@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Трассы | Апекс-лог</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html" class="active">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Трассы</h1>
+<p>Пока на сайте шесть трасс. Выбирал те, которые сам больше всего смотрю (и в которые катаюсь в симуляторе). Может, потом добавлю Интерлагос и Сузуку в дождь.</p>
+<div class="tracks-list">
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="monza"></svg>
+    <h3><a href="tracks/monza.html">Монца</a></h3>
+    <div class="small">Италия &middot; 5.793 км &middot; 11 поворотов</div>
+  </div>
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="spa"></svg>
+    <h3><a href="tracks/spa.html">Спа-Франкоршам</a></h3>
+    <div class="small">Бельгия &middot; 7.004 км &middot; 19 поворотов</div>
+  </div>
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="suzuka"></svg>
+    <h3><a href="tracks/suzuka.html">Сузука</a></h3>
+    <div class="small">Япония &middot; 5.807 км &middot; 18 поворотов</div>
+  </div>
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="silverstone"></svg>
+    <h3><a href="tracks/silverstone.html">Сильверстоун</a></h3>
+    <div class="small">Великобритания &middot; 5.891 км &middot; 18 поворотов</div>
+  </div>
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="nurburgring"></svg>
+    <h3><a href="tracks/nurburgring.html">Нюрбургринг (ГП)</a></h3>
+    <div class="small">Германия &middot; 5.148 км &middot; 15 поворотов</div>
+  </div>
+  <div class="track-card">
+    <svg viewBox="0 0 300 200" data-outline="monaco"></svg>
+    <h3><a href="tracks/monaco.html">Монако</a></h3>
+    <div class="small">Монако &middot; 3.337 км &middot; 19 поворотов</div>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script>
+// рисуем маленькие схемы в карточках
+var svgs = document.querySelectorAll("svg[data-outline]");
+for (var i = 0; i < svgs.length; i++) {
+  var t = TRACKS[svgs[i].getAttribute("data-outline")];
+  svgs[i].innerHTML = '<path d="' + pathFromOutline(t.outline) + '" fill="none" stroke="#333" stroke-width="5" stroke-linejoin="round"/>';
+}
+</script>
+</body>
+</html>
