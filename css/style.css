@@ -1,0 +1,82 @@
+/* основные стили сайта, писал сам, без фреймворков */
+body {
+  margin: 0;
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #222;
+  background: #f2f0eb;
+}
+a { color: #b3261e; }
+a:hover { color: #6d1610; }
+
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 15px; }
+
+header.top {
+  background: #1d1d1d;
+  color: #eee;
+  border-bottom: 4px solid #c8102e;
+}
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.logo { font-family: "Courier New", monospace; font-size: 22px; font-weight: bold; padding: 12px 0; color: #fff; text-decoration: none; }
+.logo span { color: #ffcc00; }
+nav a { color: #ddd; text-decoration: none; margin-left: 16px; font-size: 14px; }
+nav a:hover, nav a.active { color: #ffcc00; }
+
+main { background: #fff; padding: 20px 25px 30px; margin: 20px auto; border: 1px solid #ddd; }
+h1 { font-size: 26px; margin-top: 5px; }
+h2 { font-size: 20px; border-bottom: 1px solid #ccc; padding-bottom: 3px; margin-top: 30px; }
+
+.demo-note {
+  background: #fff7d6;
+  border-left: 4px solid #e0b000;
+  padding: 8px 12px;
+  font-size: 13px;
+  margin: 10px 0 15px;
+}
+
+table.data { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.data th, table.data td { border: 1px solid #ccc; padding: 4px 8px; text-align: left; }
+table.data th { background: #eee; }
+table.data tr:nth-child(even) td { background: #fafafa; }
+
+.tracks-list { display: flex; flex-wrap: wrap; gap: 15px; }
+.track-card { width: 290px; border: 1px solid #ccc; padding: 10px; background: #fcfcfc; }
+.track-card h3 { margin: 5px 0; font-size: 17px; }
+.track-card svg { width: 100%; height: 150px; background: #f6f6f6; }
+
+.map { width: 100%; max-width: 460px; background: #f7f7f2; border: 1px solid #ddd; }
+.map .road { fill: none; stroke: #444; stroke-width: 6; stroke-linejoin: round; }
+.map .road-in { fill: none; stroke: #999; stroke-width: 1; stroke-dasharray: 4 4; }
+.map .car { fill: #c8102e; }
+.map .apex { fill: #ffcc00; stroke: #333; stroke-width: 1; }
+.map text { font-size: 9px; fill: #333; }
+
+.two-col { display: flex; gap: 25px; flex-wrap: wrap; }
+.two-col > div { flex: 1 1 380px; }
+
+canvas.chart { width: 100%; height: 220px; border: 1px solid #ddd; background: #fff; display: block; margin-bottom: 8px; }
+.legend span { display: inline-block; margin-right: 15px; font-size: 13px; }
+.legend i { display: inline-block; width: 18px; height: 4px; vertical-align: middle; margin-right: 4px; }
+
+.hero { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.hero p { flex: 1 1 300px; }
+
+/* бегущая полоска на главной */
+.speedline { height: 6px; background: #eee; overflow: hidden; margin: 10px 0 20px; }
+.speedline div { height: 6px; width: 30%; background: #c8102e; animation: run 3s linear infinite; }
+@keyframes run { from { margin-left: -30%; } to { margin-left: 100%; } }
+
+.files li { margin-bottom: 6px; }
+.small { font-size: 12px; color: #666; }
+
+footer { text-align: center; font-size: 12px; color: #666; padding: 10px 0 25px; }
+footer .counters { margin: 8px 0; min-height: 31px; }
+footer .counters span.ph { display: inline-block; width: 88px; height: 31px; border: 1px dashed #aaa; font-size: 9px; line-height: 31px; color: #999; margin: 0 3px; }
+
+pre.log { font-size: 11px; background: #222; color: #cfc; padding: 10px; overflow-x: auto; }
+
+@media (max-width: 600px) {
+  nav a { margin-left: 0; margin-right: 10px; }
+  main { padding: 15px; }
+}

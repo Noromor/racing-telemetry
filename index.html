@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Главная | Апекс-лог</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
+    <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Апекс-лог: телеметрия гоночных трасс</h1>
+<div class="speedline"><div></div></div>
+<div class="hero">
+  <svg class="map" viewBox="0 0 300 200" style="max-width:300px">
+    <path id="hero-road" class="road" d="M60,170 L240,170 L262,160 L262,140 L250,120 L255,95 L240,60 L200,30 L150,25 L120,40 L95,55 L60,60 L35,80 L30,120 L40,155 Z"></path>
+    <circle class="car" r="5">
+      <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#hero-road"/></animateMotion>
+    </circle>
+  </svg>
+  <p>Привет! Это мой небольшой сайт про то, как машины проходят известные трассы: где тормозят, где точка апекса, какая скорость на выходе. Начинал его как заметки для себя (катаюсь в симуляторе), а потом переделал в учебный проект по веб-аналитике.<br><br>
+  Сразу честно: <b>вся телеметрия здесь - примерная, демонстрационная</b>. Настоящие данные команд закрыты, поэтому графики я считаю скриптом по своим оценкам скорости в поворотах.</p>
+</div>
+<h2>Что есть на сайте</h2>
+<ul>
+  <li><a href="tracks.html">Шесть трасс</a> - Монца, Спа, Сузука, Сильверстоун, Нюрбургринг и Монако: схема, апексы, графики скорости, газа и тормоза.</li>
+  <li><a href="telemetry.html">Сравнение телеметрии</a> трасс на одном графике.</li>
+  <li><a href="apex.html">Что такое апекс</a> и почему поздний апекс часто быстрее.</li>
+  <li><a href="files.html">Файлы</a>: CSV с точками апексов и мини-гайд в PDF.</li>
+  <li><a href="stats.html">Статистика посещений</a> - отчёт по логам веб-сервера (для лабораторной).</li>
+</ul>
+<h2>Последние обновления</h2>
+<ul class="small">
+  <li>16.10.2026 - добавил страницу со статистикой и логами</li>
+  <li>14.10.2026 - гайд по апексам в PDF</li>
+  <li>13.10.2026 - Монако и Нюрбургринг</li>
+  <li>12.10.2026 - первая версия сайта</li>
+</ul>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+
+</body>
+</html>
