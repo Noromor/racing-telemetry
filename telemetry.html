@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Телеметрия | Апекс-лог</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html" class="active">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Сравнение телеметрии</h1>
+<div class="demo-note">Данные демонстрационные (см. <a href="about.html">О сайте</a>).</div>
+<p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видно разницу между Монцей (длинные прямые, почти всё время за 300) и Монако.</p>
+<p><label style="margin-right:12px"><input type="checkbox" value="monza" checked> Монца</label><label style="margin-right:12px"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label style="margin-right:12px"><input type="checkbox" value="suzuka"> Сузука</label><label style="margin-right:12px"><input type="checkbox" value="silverstone"> Сильверстоун</label><label style="margin-right:12px"><input type="checkbox" value="nurburgring"> Нюрбургринг (ГП)</label><label style="margin-right:12px"><input type="checkbox" value="monaco" checked> Монако</label></p>
+<canvas id="cmp" class="chart" style="height:300px"></canvas>
+<div class="legend" id="legend"></div>
+<h2>Сводная таблица (демо)</h2>
+<table class="data" id="sum"><tr><th>Трасса</th><th>Средняя скорость, км/ч</th><th>Мин. скорость, км/ч</th><th>Полный газ, %</th><th>Апексов в таблице</th></tr></table>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+<script src="js/data.js"></script>
+<script src="js/charts.js"></script>
+<script>
+var COLORS = {monza:"#c8102e", spa:"#1f4fa8", suzuka:"#e08000", silverstone:"#2a8a2a", nurburgring:"#7a3fa0", monaco:"#333"};
+function redraw() {
+  var cv = document.getElementById("cmp");
+  var boxes = document.querySelectorAll("input[type=checkbox]");
+  var dpr = window.devicePixelRatio || 1;
+  cv.width = cv.clientWidth * dpr; cv.height = cv.clientHeight * dpr;
+  var c = cv.getContext("2d"); c.scale(dpr, dpr);
+  var w = cv.clientWidth, h = cv.clientHeight, maxX = 7100, maxY = 350;
+  c.font = "10px Verdana"; c.fillStyle = "#666"; c.strokeStyle = "#e5e5e5";
+  for (var y = 0; y <= maxY; y += 50) { var yy = h - 20 - y / maxY * (h - 30); c.beginPath(); c.moveTo(40, yy); c.lineTo(w, yy); c.stroke(); c.fillText(y, 8, yy + 3); }
+  for (var x = 0; x <= 7000; x += 1000) c.fillText(x / 1000 + " км", 40 + x / maxX * (w - 45) - 8, h - 5);
+  var leg = "";
+  for (var b = 0; b < boxes.length; b++) {
+    if (!boxes[b].checked) continue;
+    var id = boxes[b].value, tel = makeTelemetry(TRACKS[id]);
+    c.strokeStyle = COLORS[id]; c.lineWidth = 1.3; c.beginPath();
+    for (var i = 0; i < tel.length; i++) {
+      var px = 40 + tel[i].d / maxX * (w - 45), py = h - 20 - tel[i].speed / maxY * (h - 30);
+      if (i) c.lineTo(px, py); else c.moveTo(px, py);
+    }
+    c.stroke();
+    leg += '<span><i style="background:' + COLORS[id] + '"></i>' + TRACKS[id].name + '</span>';
+  }
+  document.getElementById("legend").innerHTML = leg;
+}
+var boxes = document.querySelectorAll("input[type=checkbox]");
+for (var b = 0; b < boxes.length; b++) boxes[b].onchange = redraw;
+redraw();
+var tb = document.getElementById("sum");
+for (var id in TRACKS) {
+  var tel = makeTelemetry(TRACKS[id]), s = 0, mn = 999, f = 0;
+  for (var i = 0; i < tel.length; i++) { s += tel[i].speed; if (tel[i].speed < mn) mn = tel[i].speed; if (tel[i].throttle == 100) f++; }
+  var tr = document.createElement("tr");
+  tr.innerHTML = "<td>" + TRACKS[id].name + "</td><td>" + Math.round(s / tel.length) + "</td><td>" + mn + "</td><td>" + Math.round(f / tel.length * 100) + "</td><td>" + TRACKS[id].apex.length + "</td>";
+  tb.appendChild(tr);
+}
+</script>
+</body>
+</html>
