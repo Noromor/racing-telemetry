@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Нюрбургринг (ГП) | Апекс-лог</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.ico">
+</head>
+<body data-track="nurburgring">
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="../index.html">APEX<span>-LOG</span></a>
+    <nav><a href="../index.html">Главная</a><a href="../tracks.html">Трассы</a><a href="../telemetry.html">Телеметрия</a><a href="../apex.html">Про апексы</a><a href="../files.html">Файлы</a><a href="../stats.html">Статистика</a><a href="../about.html">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<p class="small"><a href="../tracks.html">Трассы</a> / Нюрбургринг (ГП)</p>
+<h1>Нюрбургринг (ГП) <span class="small">(Nürburgring GP-Strecke, Германия)</span></h1>
+<div class="demo-note">Внимание: графики ниже построены на <b>демо-данных</b>. Скорости в апексах я примерно оценил сам, остальное считается скриптом. Это не настоящая телеметрия.</div>
+<div class="two-col">
+  <div>
+    <svg id="map" class="map" viewBox="0 0 300 200">
+      <path class="road" d=""></path>
+      <path class="road-in" d=""></path>
+      <circle class="car" r="5" cx="-10" cy="-10"></circle>
+    </svg>
+    <p class="small">Схема упрощённая, нарисована от руки по картинке. Красная точка - машина (скорость по демо-телеметрии, ускорено в 12 раз). Сейчас: <b id="cur-speed">0</b> км/ч</p>
+  </div>
+  <div>
+    <table class="data">
+      <tr><th>Длина круга</th><td>5148 м</td></tr>
+      <tr><th>Поворотов</th><td>15</td></tr>
+      <tr><th>Макс. скорость (демо)</th><td>315 км/ч</td></tr>
+      <tr><th>Ориентир по кругу</th><td>1:29.5</td></tr>
+      <tr><th>Полный газ (демо)</th><td><span id="full-thr">-</span> % дистанции</td></tr>
+      <tr><th>Торможение (демо)</th><td><span id="brk-share">-</span> % дистанции</td></tr>
+    </table>
+    <p>Здесь именно ГП-конфигурация, а не Нордшляйфе (на Северную петлю данных у меня нет, она 20 с лишним км). Трасса техничная, с медленными шпильками и шиканой в конце круга.</p>
+  </div>
+</div>
+<h2>Апексы</h2>
+<table class="data">
+  <thead><tr><th>№</th><th>Поворот</th><th>Дистанция, м</th><th>Скорость в апексе, км/ч</th><th>Передача</th></tr></thead>
+  <tbody id="apex-table"></tbody>
+</table>
+<p>Таблицу можно скачать: <a href="../files/apex_nurburgring.csv" download>apex_nurburgring.csv</a>, а всю демо-телеметрию круга - <a href="../files/telemetry_nurburgring.csv" download>telemetry_nurburgring.csv</a>.</p>
+<h2>Телеметрия круга</h2>
+<canvas id="c-speed" class="chart"></canvas>
+<canvas id="c-thr" class="chart" style="height:120px"></canvas>
+<canvas id="c-brk" class="chart" style="height:120px"></canvas>
+<p class="small">Пунктир - границы секторов. Сектор 1 начинается от линии старта.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+<script src="../js/data.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/track.js"></script>
+</body>
+</html>
