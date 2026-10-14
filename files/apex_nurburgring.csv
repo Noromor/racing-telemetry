@@ -1,0 +1,7 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+nurburgring,1,"Castrol-S",300,86,2
+nurburgring,2,"Mercedes-Arena",900,108,3
+nurburgring,3,"Шпилька Dunlop",2100,70,2
+nurburgring,4,"Schumacher-S",2600,232,6
+nurburgring,5,"Bit-Kurve",3200,150,4
+nurburgring,6,"Шикана Veedol",4600,80,2

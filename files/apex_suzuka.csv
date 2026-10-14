@@ -1,0 +1,9 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+suzuka,1,"Поворот 1",650,262,7
+suzuka,2,"S-кривые (Esses)",1200,198,5
+suzuka,3,"Degner 1",2300,212,6
+suzuka,4,"Degner 2",2450,142,4
+suzuka,5,"Шпилька (Hairpin)",2900,66,2
+suzuka,6,"Spoon",3900,156,4
+suzuka,7,"130R",4900,298,7
+suzuka,8,"Шикана Casio",5350,82,2

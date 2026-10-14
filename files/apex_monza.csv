@@ -1,0 +1,8 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+monza,1,"Variante del Rettifilo",870,82,2
+monza,2,"Curva Biassono",1500,285,7
+monza,3,"Variante della Roggia",2150,118,3
+monza,4,"Lesmo 1",2650,185,5
+monza,5,"Lesmo 2",2950,172,4
+monza,6,"Variante Ascari",3800,205,5
+monza,7,"Parabolica (Alboreto)",5150,215,5

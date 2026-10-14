@@ -1,0 +1,10 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+spa,1,"La Source",420,64,2
+spa,2,"Raidillon",1050,292,7
+spa,3,"Les Combes",2400,138,4
+spa,4,"Bruxelles",3000,118,3
+spa,5,"Pouhon",3700,232,6
+spa,6,"Fagnes",4300,168,5
+spa,7,"Stavelot",5100,190,5
+spa,8,"Blanchimont",6000,305,8
+spa,9,"Bus Stop",6650,76,2

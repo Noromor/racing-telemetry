@@ -1,0 +1,9 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+silverstone,1,"Abbey",300,278,7
+silverstone,2,"Village",900,112,3
+silverstone,3,"The Loop",1100,72,2
+silverstone,4,"Copse",2000,292,7
+silverstone,5,"Maggotts-Becketts",2700,205,6
+silverstone,6,"Stowe",3900,238,6
+silverstone,7,"Vale",4600,108,3
+silverstone,8,"Club",5000,152,4

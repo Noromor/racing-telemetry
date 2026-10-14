@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Про апексы | Апекс-лог</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html" class="active">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>Что такое апекс</h1>
+<p><b>Апекс</b> (клиппинг-пойнт) - это точка поворота, в которой машина ближе всего подходит к внутренней кромке. Обычно где-то рядом с ней и минимальная скорость в повороте. Дальше водитель начинает раскрывать руль и добавлять газ.</p>
+<svg viewBox="0 0 320 180" class="map" style="max-width:380px">
+  <path d="M20,170 L20,80 Q20,20 80,20 L300,20" fill="none" stroke="#bbb" stroke-width="40"/>
+  <path d="M28,170 L30,95 Q38,32 105,24 L300,30" fill="none" stroke="#1f4fa8" stroke-width="2" stroke-dasharray="5 3"/>
+  <path d="M30,170 L36,120 Q40,40 120,32 L300,22" fill="none" stroke="#c8102e" stroke-width="2"/>
+  <circle cx="44" cy="58" r="4" class="apex"/><text x="52" y="66">ранний апекс</text>
+  <circle cx="70" cy="38" r="4" class="apex"/><text x="78" y="52">поздний апекс</text>
+</svg>
+<p class="small">Рисунок очень схематичный, синим - ранний апекс, красным - поздний.</p>
+<h2>Ранний, геометрический и поздний</h2>
+<ul>
+  <li><b>Геометрический апекс</b> - ровно посередине дуги. Даёт максимальный радиус траектории, но не всегда лучшее время.</li>
+  <li><b>Ранний апекс</b> - в поворот заходят быстрее, но на выходе машину выносит, и газ приходится открывать позже.</li>
+  <li><b>Поздний апекс</b> - тормозим чуть раньше и глубже, зато выход прямее и газ в пол раньше. Перед длинной прямой почти всегда выгоднее именно он.</li>
+</ul>
+<h2>Как это видно в телеметрии</h2>
+<p>На графике скорости апекс - это локальный минимум. Если сравнить два круга, то при позднем апексе минимум немного ниже, но после него кривая скорости растёт круче, и к концу прямой машина быстрее. На графике газа это видно по тому, как рано начинается участок 100 %.</p>
+<p>Ещё одна полезная штука - <b>trail braking</b> (торможение со входом в поворот): тормоз отпускают не сразу, а плавно до апекса. На демо-графиках этого нет, у меня модель слишком простая.</p>
+<p>Подробнее - в <a href="files.html">мини-гайде</a>.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+
+</body>
+</html>

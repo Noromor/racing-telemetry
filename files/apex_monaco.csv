@@ -1,0 +1,12 @@
+track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+monaco,1,"Sainte Devote",250,104,3
+monaco,2,"Massenet",700,158,4
+monaco,3,"Casino",850,118,3
+monaco,4,"Mirabeau",1100,74,2
+monaco,5,"Шпилька Fairmont",1250,48,1
+monaco,6,"Portier",1500,88,2
+monaco,7,"Нувель шикана",2050,84,2
+monaco,8,"Tabac",2300,168,4
+monaco,9,"Бассейн (Piscine)",2550,140,4
+monaco,10,"La Rascasse",3000,68,2
+monaco,11,"Anthony Noghes",3200,78,2
