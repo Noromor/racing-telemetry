@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О сайте | Апекс-лог</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html" class="active">О сайте</a></nav>
+  </div>
+</header>
+<main class="wrap">
+<h1>О сайте</h1>
+<p>Меня зовут Никита, я учусь в Московском Политехе (группа 233-321, заочка). Сайт сделан как учебный проект по дисциплине &laquo;Веб-аналитика&raquo;: на нём я ставлю счётчики и смотрю статистику. Тема - потому что люблю автоспорт и гоночные симуляторы.</p>
+<h2>Откуда данные</h2>
+<ul>
+  <li>Длины трасс, число поворотов и названия поворотов - из открытых источников (сайты трасс, Википедия).</li>
+  <li>Скорости в апексах - мои примерные оценки по онбордам и симулятору.</li>
+  <li>Графики скорости, газа и тормоза <b>сгенерированы скриптом</b> (js/data.js) по этим оценкам. Это демо-данные, не реальная телеметрия какой-либо команды.</li>
+  <li>Схемы трасс нарисованы вручную и сильно упрощены.</li>
+</ul>
+<h2>Технически</h2>
+<p>Обычные HTML, CSS и JavaScript, без фреймворков. Графики рисуются на canvas, анимация - SVG. Хостинг - GitHub Pages.</p>
+<p>Нашли ошибку в названии поворота или скорости? Пишите в issues репозитория.</p>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
+    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+  </div>
+</footer>
+
+</body>
+</html>
