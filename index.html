@@ -4,87 +4,129 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Главная | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
-    <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<h1>Апекс-лог: телеметрия гоночных трасс</h1>
-<div class="speedline"><div></div></div>
-<div class="hero">
-  <svg class="map" viewBox="0 0 300 200" style="max-width:300px">
-    <path id="hero-road" class="road" d="M60,170 L240,170 L262,160 L262,140 L250,120 L255,95 L240,60 L200,30 L150,25 L120,40 L95,55 L60,60 L35,80 L30,120 L40,155 Z"></path>
-    <circle class="car" r="5">
-      <animateMotion dur="9s" repeatCount="indefinite"><mpath href="#hero-road"/></animateMotion>
-    </circle>
-  </svg>
-  <p>Привет! Это мой небольшой сайт про то, как машины проходят известные трассы: где тормозят, где точка апекса, какая скорость на выходе. Начинал его как заметки для себя (катаюсь в симуляторе), а потом переделал в учебный проект по веб-аналитике.<br><br>
-  Ниже все трассы, которые сейчас есть на сайте. На странице каждой - карта, таблица апексов и графики скорости, газа и тормоза по дистанции.</p>
-</div>
-<h2>Трассы</h2>
+<section class="hero hero-main"><div class="bar">
+  <p class="kicker">Телеметрия гоночных трасс</p>
+  <h1>Где тормозить, где апекс,<br>с какой скоростью выходить.</h1>
+  <p class="lead">Схемы известных трасс, точки апексов с дистанцией и скоростью, графики скорости, газа и тормоза по ходу круга.</p>
+  <p class="cta"><a class="btn" href="tracks.html">Смотреть трассы</a> <a class="btn btn-line" href="schedule.html">Расписание 2026</a></p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><div class="sec-head"><h2>Трассы</h2><a href="tracks.html">Все трассы &rarr;</a></div>
 <div class="grid">
-  <a class="cell" href="tracks/monza.html">
-    <img src="img/tracks/monza.png" alt="Схема трассы Монца" loading="lazy">
-    <b>Монца</b>
-    <span>Италия &middot; 5.793 км &middot; 11 пов.</span>
-    <span>Рекорд круга: 1:21.046</span>
+  <a class="card" href="tracks/monza.html">
+    <div class="card-img"><img src="img/tracks/monza.png" alt="Схема трассы Монца" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">01</span>
+      <h3>Монца</h3>
+      <span class="meta">Италия &middot; 5.793 км &middot; 11 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:21.046</b></span>
+        <span>Р. Баррикелло, Ferrari, 2004</span>
+        <span>Макс. скорость: <b>342 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-  <a class="cell" href="tracks/spa.html">
-    <img src="img/tracks/spa.png" alt="Схема трассы Спа-Франкоршам" loading="lazy">
-    <b>Спа-Франкоршам</b>
-    <span>Бельгия &middot; 7.004 км &middot; 19 пов.</span>
-    <span>Рекорд круга: 1:44.701</span>
+  <a class="card" href="tracks/spa.html">
+    <div class="card-img"><img src="img/tracks/spa.png" alt="Схема трассы Спа-Франкоршам" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">02</span>
+      <h3>Спа-Франкоршам</h3>
+      <span class="meta">Бельгия &middot; 7.004 км &middot; 19 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:44.701</b></span>
+        <span>С. Перес, Red Bull, 2024</span>
+        <span>Макс. скорость: <b>330 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-  <a class="cell" href="tracks/suzuka.html">
-    <img src="img/tracks/suzuka.png" alt="Схема трассы Сузука" loading="lazy">
-    <b>Сузука</b>
-    <span>Япония &middot; 5.807 км &middot; 18 пов.</span>
-    <span>Рекорд круга: 1:30.983</span>
+  <a class="card" href="tracks/suzuka.html">
+    <div class="card-img"><img src="img/tracks/suzuka.png" alt="Схема трассы Сузука" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">03</span>
+      <h3>Сузука</h3>
+      <span class="meta">Япония &middot; 5.807 км &middot; 18 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:30.983</b></span>
+        <span>Л. Хэмилтон, Mercedes, 2019</span>
+        <span>Макс. скорость: <b>318 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-  <a class="cell" href="tracks/silverstone.html">
-    <img src="img/tracks/silverstone.png" alt="Схема трассы Сильверстоун" loading="lazy">
-    <b>Сильверстоун</b>
-    <span>Великобритания &middot; 5.891 км &middot; 18 пов.</span>
-    <span>Рекорд круга: 1:27.097</span>
+  <a class="card" href="tracks/silverstone.html">
+    <div class="card-img"><img src="img/tracks/silverstone.png" alt="Схема трассы Сильверстоун" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">04</span>
+      <h3>Сильверстоун</h3>
+      <span class="meta">Великобритания &middot; 5.891 км &middot; 18 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:27.097</b></span>
+        <span>М. Ферстаппен, Red Bull, 2020</span>
+        <span>Макс. скорость: <b>325 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-  <a class="cell" href="tracks/nurburgring.html">
-    <img src="img/tracks/nurburgring.png" alt="Схема трассы Нюрбургринг Нордшляйфе" loading="lazy">
-    <b>Нюрбургринг Нордшляйфе</b>
-    <span>Германия &middot; 20.832 км &middot; 73 пов.</span>
-    <span>Рекорд круга: 5:19.546</span>
+  <a class="card" href="tracks/nurburgring.html">
+    <div class="card-img"><img src="img/tracks/nurburgring.png" alt="Схема трассы Нюрбургринг Нордшляйфе" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">05</span>
+      <h3>Нюрбургринг Нордшляйфе</h3>
+      <span class="meta">Германия &middot; 20.832 км &middot; 73 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>5:19.546</b></span>
+        <span>Т. Бернхард, Porsche 919 Evo, 2018</span>
+        <span>Макс. скорость: <b>300 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-  <a class="cell" href="tracks/monaco.html">
-    <img src="img/tracks/monaco.png" alt="Схема трассы Монако" loading="lazy">
-    <b>Монако</b>
-    <span>Монако &middot; 3.337 км &middot; 19 пов.</span>
-    <span>Рекорд круга: 1:12.909</span>
+  <a class="card" href="tracks/monaco.html">
+    <div class="card-img"><img src="img/tracks/monaco.png" alt="Схема трассы Монако" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">06</span>
+      <h3>Монако</h3>
+      <span class="meta">Монако &middot; 3.337 км &middot; 19 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:12.909</b></span>
+        <span>Л. Хэмилтон, Mercedes, 2021</span>
+        <span>Макс. скорость: <b>290 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
   </a>
-</div>
-<h2>Что есть на сайте</h2>
-<ul>
-  <li><a href="tracks.html">Шесть трасс</a> - Монца, Спа, Сузука, Сильверстоун, Нордшляйфе и Монако: карта, апексы, графики скорости, газа и тормоза.</li>
-  <li><a href="telemetry.html">Сравнение телеметрии</a> трасс на одном графике.</li>
-  <li><a href="apex.html">Что такое апекс</a> и почему поздний апекс часто быстрее.</li>
-  <li><a href="files.html">Файлы</a>: CSV с точками апексов и мини-гайд в PDF.</li>
-  <li><a href="stats.html">Статистика посещений</a> - отчёт по логам веб-сервера (для лабораторной).</li>
-</ul>
-<h2>Последние обновления</h2>
-<ul class="small">
-  <li>16.10.2026 - карты трасс, Нюрбургринг теперь Нордшляйфе</li>
-  <li>16.10.2026 - добавил страницу со статистикой и логами</li>
-  <li>14.10.2026 - гайд по апексам в PDF</li>
-  <li>13.10.2026 - Монако и Нюрбургринг</li>
-  <li>12.10.2026 - первая версия сайта</li>
-</ul>
+</div></div></section>
+<section class="sec alt"><div class="bar"><div class="cols3">
+  <div><span class="kicker">Телеметрия</span><h3><a href="telemetry.html">Сравнение трасс</a></h3><p>Скорость по дистанции для нескольких трасс на одном графике и сводная таблица: средняя и минимальная скорость, доля полного газа.</p></div>
+  <div><span class="kicker">Теория</span><h3><a href="apex.html">Что такое апекс</a></h3><p>Ранний, геометрический и поздний апекс и то, как каждый из них выглядит на графике скорости и газа.</p></div>
+  <div><span class="kicker">Данные</span><h3><a href="files.html">Файлы CSV и PDF</a></h3><p>Точки апексов и телеметрия круга в CSV, краткий гайд по чтению телеметрии.</p></div>
+</div></div></section>
+<section class="sec "><div class="bar"><div class="cols2">
+  <div><span class="kicker">Календарь</span><h3><a href="schedule.html">Расписание гонок 2026</a></h3><p>Этапы WEC, IMSA и ELMS сезона 2026 с датами и ссылками на официальные источники, а также ежедневные онлайн-заезды в симуляторе.</p></div>
+  <div><span class="kicker">Симрейсинг</span><h3><a href="simracing.html">Гоночные симуляторы</a></h3><p>Популярные симуляторы, лиги и то, как телеметрия помогает искать время на круге.</p></div>
+</div></div></section>
+<section class="sec alt"><div class="bar"><h2>Статистика</h2><p>Отчёты по журналам веб-сервера (GoAccess, AWStats, rhit) и сырой журнал доступа - на странице <a href="stats.html">статистики</a>.</p></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -93,7 +135,6 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 

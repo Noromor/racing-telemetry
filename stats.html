@@ -4,37 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Статистика | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
-    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html" class="active">Статистика</a><a href="about.html">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html" class="active">Статистика</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<h1>Статистика посещений</h1>
-<p>Эта страница сделана для лабораторной работы &laquo;Внутренняя статистика&raquo;. GitHub Pages не даёт доступ к логам сервера, поэтому копию сайта я запустил на своём компьютере под nginx и прогнал по ней тестовый трафик (скрипт с разными IP, браузерами и роботами, 09.10-15.10.2026). Логи и отчёты ниже - оттуда.</p>
+<section class="hero"><div class="bar">
+  <h1>Статистика посещений</h1>
+  <p class="lead">Отчёты по журналам веб-сервера.</p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><p>GitHub Pages не даёт доступа к журналам сервера, поэтому копия сайта была развёрнута под nginx, и по ней прогнан тестовый трафик (разные IP, браузеры и роботы, 09.10-15.10.2026). Журналы и отчёты ниже получены оттуда.</p>
 <h2>Отчёты</h2>
 <ul class="files">
   <li><a href="stats/goaccess.html">Отчёт GoAccess (HTML)</a></li>
   <li><a href="stats/awstats/awstats.racing.html">Отчёт AWStats (HTML)</a></li>
   <li><a href="stats/rhit.txt">Вывод rhit (текст)</a></li>
-</ul>
-<h2>Сырой лог</h2>
+</ul></div></section>
+<section class="sec alt"><div class="bar"><h2>Сырой журнал</h2>
 <p>Фрагмент журнала (формат combined, первые 300 строк): <a href="stats/access_sample.log">access_sample.log</a>. Полный журнал: <a href="stats/access.log.gz">access.log.gz</a>.</p>
-<p class="small">IP-адреса в журнале взяты из диапазонов для документации (RFC 5737), так что реальным людям они не принадлежат.</p>
+<p class="note">IP-адреса в журнале взяты из диапазонов для документации (RFC 5737) и реальным пользователям не принадлежат.</p>
 <pre class="log" id="logtail">загрузка...</pre>
 <script>
 fetch("stats/access_sample.log").then(function (r) { return r.text(); }).then(function (t) {
   document.getElementById("logtail").textContent = t.split("\n").slice(0, 25).join("\n");
 }).catch(function () { document.getElementById("logtail").textContent = "не удалось загрузить файл"; });
-</script>
+</script></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html" class="active">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -43,7 +52,6 @@ fetch("stats/access_sample.log").then(function (r) { return r.text(); }).then(fu
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 

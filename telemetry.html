@@ -4,27 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Телеметрия | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
-    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html" class="active">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html" class="active">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<h1>Сравнение телеметрии</h1>
-<p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видно разницу между Монцей (длинные прямые, почти всё время за 300) и Монако. Нордшляйфе по длине не помещается рядом с остальными, её лучше смотреть отдельно.</p>
-<p><label style="margin-right:12px"><input type="checkbox" value="monza" checked> Монца</label><label style="margin-right:12px"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label style="margin-right:12px"><input type="checkbox" value="suzuka"> Сузука</label><label style="margin-right:12px"><input type="checkbox" value="silverstone"> Сильверстоун</label><label style="margin-right:12px"><input type="checkbox" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label style="margin-right:12px"><input type="checkbox" value="monaco" checked> Монако</label></p>
-<canvas id="cmp" class="chart" style="height:300px"></canvas>
-<div class="legend" id="legend"></div>
-<h2>Сводная таблица</h2>
-<table class="data" id="sum"><tr><th>Трасса</th><th>Средняя скорость, км/ч</th><th>Мин. скорость, км/ч</th><th>Полный газ, %</th><th>Апексов в таблице</th></tr></table>
+<section class="hero"><div class="bar">
+  <h1>Сравнение телеметрии</h1>
+  <p class="lead">Скорость по дистанции круга для выбранных трасс.</p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видна разница между Монцей (длинные прямые, почти всё время выше 300 км/ч) и Монако. Нордшляйфе по длине несопоставима с остальными, её удобнее смотреть отдельно.</p>
+<p><label class="chk"><input type="checkbox" value="monza" checked> Монца</label><label class="chk"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label class="chk"><input type="checkbox" value="suzuka"> Сузука</label><label class="chk"><input type="checkbox" value="silverstone"> Сильверстоун</label><label class="chk"><input type="checkbox" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label class="chk"><input type="checkbox" value="monaco" checked> Монако</label></p>
+<canvas id="cmp" class="chart" style="height:340px"></canvas>
+<div class="legend" id="legend"></div></div></section>
+<section class="sec alt"><div class="bar"><h2>Сводная таблица</h2>
+<table class="data" id="sum"><tr><th>Трасса</th><th>Средняя скорость, км/ч</th><th>Мин. скорость, км/ч</th><th>Полный газ, %</th><th>Апексов в таблице</th></tr></table></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html" class="active">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -33,13 +42,12 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 <script src="js/data.js"></script>
 <script src="js/charts.js"></script>
 <script>
-var COLORS = {monza:"#c8102e", spa:"#1f4fa8", suzuka:"#e08000", silverstone:"#2a8a2a", nurburgring:"#7a3fa0", monaco:"#333"};
+var COLORS = {monza:"#d7192b", spa:"#0b1f3f", suzuka:"#e07b00", silverstone:"#1f8a5b", nurburgring:"#6b4fa0", monaco:"#4a90d9"};
 function redraw() {
   var cv = document.getElementById("cmp");
   var boxes = document.querySelectorAll("input[type=checkbox]");
@@ -48,7 +56,7 @@ function redraw() {
   var c = cv.getContext("2d"); c.scale(dpr, dpr);
   var w = cv.clientWidth, h = cv.clientHeight, maxY = 350, maxX = 1000;
   for (var q = 0; q < boxes.length; q++) if (boxes[q].checked) maxX = Math.max(maxX, TRACKS[boxes[q].value].length + 100);
-  c.font = "10px Verdana"; c.fillStyle = "#666"; c.strokeStyle = "#e5e5e5";
+  c.font = "11px Arial"; c.fillStyle = "#5b6b85"; c.strokeStyle = "#e3e8f0";
   for (var y = 0; y <= maxY; y += 50) { var yy = h - 20 - y / maxY * (h - 30); c.beginPath(); c.moveTo(40, yy); c.lineTo(w, yy); c.stroke(); c.fillText(y, 8, yy + 3); }
   var stX = maxX > 10000 ? 2000 : 1000;
   for (var x = 0; x <= maxX; x += stX) c.fillText(x / 1000 + " км", 40 + x / maxX * (w - 45) - 8, h - 5);
@@ -56,7 +64,7 @@ function redraw() {
   for (var b = 0; b < boxes.length; b++) {
     if (!boxes[b].checked) continue;
     var id = boxes[b].value, tel = makeTelemetry(TRACKS[id]);
-    c.strokeStyle = COLORS[id]; c.lineWidth = 1.3; c.beginPath();
+    c.strokeStyle = COLORS[id]; c.lineWidth = 1.6; c.beginPath();
     for (var i = 0; i < tel.length; i++) {
       var px = 40 + tel[i].d / maxX * (w - 45), py = h - 20 - tel[i].speed / maxY * (h - 30);
       if (i) c.lineTo(px, py); else c.moveTo(px, py);

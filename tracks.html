@@ -4,54 +4,116 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Трассы | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
-    <nav><a href="index.html">Главная</a><a href="tracks.html" class="active">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html" class="active">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<h1>Трассы</h1>
-<p>Пока на сайте шесть трасс. Выбирал те, которые сам больше всего смотрю (и в которые катаюсь в симуляторе). Может, потом добавлю Интерлагос.</p>
-<div class="tracks-list">
-  <div class="track-card">
-    <img src="img/tracks/monza.png" alt="Монца" loading="lazy">
-    <h3><a href="tracks/monza.html">Монца</a></h3>
-    <div class="small">Италия &middot; 5.793 км &middot; 11 поворотов</div>
-  </div>
-  <div class="track-card">
-    <img src="img/tracks/spa.png" alt="Спа-Франкоршам" loading="lazy">
-    <h3><a href="tracks/spa.html">Спа-Франкоршам</a></h3>
-    <div class="small">Бельгия &middot; 7.004 км &middot; 19 поворотов</div>
-  </div>
-  <div class="track-card">
-    <img src="img/tracks/suzuka.png" alt="Сузука" loading="lazy">
-    <h3><a href="tracks/suzuka.html">Сузука</a></h3>
-    <div class="small">Япония &middot; 5.807 км &middot; 18 поворотов</div>
-  </div>
-  <div class="track-card">
-    <img src="img/tracks/silverstone.png" alt="Сильверстоун" loading="lazy">
-    <h3><a href="tracks/silverstone.html">Сильверстоун</a></h3>
-    <div class="small">Великобритания &middot; 5.891 км &middot; 18 поворотов</div>
-  </div>
-  <div class="track-card">
-    <img src="img/tracks/nurburgring.png" alt="Нюрбургринг Нордшляйфе" loading="lazy">
-    <h3><a href="tracks/nurburgring.html">Нюрбургринг Нордшляйфе</a></h3>
-    <div class="small">Германия &middot; 20.832 км &middot; 73 поворотов</div>
-  </div>
-  <div class="track-card">
-    <img src="img/tracks/monaco.png" alt="Монако" loading="lazy">
-    <h3><a href="tracks/monaco.html">Монако</a></h3>
-    <div class="small">Монако &middot; 3.337 км &middot; 19 поворотов</div>
-  </div>
-</div>
+<section class="hero"><div class="bar">
+  <h1>Трассы</h1>
+  <p class="lead">Шесть трасс: схема, точки апексов, скорость, газ и тормоз по дистанции круга.</p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><div class="grid">
+  <a class="card" href="tracks/monza.html">
+    <div class="card-img"><img src="img/tracks/monza.png" alt="Схема трассы Монца" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">01</span>
+      <h3>Монца</h3>
+      <span class="meta">Италия &middot; 5.793 км &middot; 11 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:21.046</b></span>
+        <span>Р. Баррикелло, Ferrari, 2004</span>
+        <span>Макс. скорость: <b>342 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+  <a class="card" href="tracks/spa.html">
+    <div class="card-img"><img src="img/tracks/spa.png" alt="Схема трассы Спа-Франкоршам" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">02</span>
+      <h3>Спа-Франкоршам</h3>
+      <span class="meta">Бельгия &middot; 7.004 км &middot; 19 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:44.701</b></span>
+        <span>С. Перес, Red Bull, 2024</span>
+        <span>Макс. скорость: <b>330 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+  <a class="card" href="tracks/suzuka.html">
+    <div class="card-img"><img src="img/tracks/suzuka.png" alt="Схема трассы Сузука" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">03</span>
+      <h3>Сузука</h3>
+      <span class="meta">Япония &middot; 5.807 км &middot; 18 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:30.983</b></span>
+        <span>Л. Хэмилтон, Mercedes, 2019</span>
+        <span>Макс. скорость: <b>318 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+  <a class="card" href="tracks/silverstone.html">
+    <div class="card-img"><img src="img/tracks/silverstone.png" alt="Схема трассы Сильверстоун" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">04</span>
+      <h3>Сильверстоун</h3>
+      <span class="meta">Великобритания &middot; 5.891 км &middot; 18 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:27.097</b></span>
+        <span>М. Ферстаппен, Red Bull, 2020</span>
+        <span>Макс. скорость: <b>325 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+  <a class="card" href="tracks/nurburgring.html">
+    <div class="card-img"><img src="img/tracks/nurburgring.png" alt="Схема трассы Нюрбургринг Нордшляйфе" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">05</span>
+      <h3>Нюрбургринг Нордшляйфе</h3>
+      <span class="meta">Германия &middot; 20.832 км &middot; 73 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>5:19.546</b></span>
+        <span>Т. Бернхард, Porsche 919 Evo, 2018</span>
+        <span>Макс. скорость: <b>300 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+  <a class="card" href="tracks/monaco.html">
+    <div class="card-img"><img src="img/tracks/monaco.png" alt="Схема трассы Монако" loading="lazy"></div>
+    <div class="card-body">
+      <span class="num">06</span>
+      <h3>Монако</h3>
+      <span class="meta">Монако &middot; 3.337 км &middot; 19 пов.</span>
+      <div class="more">
+        <span>Рекорд круга: <b>1:12.909</b></span>
+        <span>Л. Хэмилтон, Mercedes, 2021</span>
+        <span>Макс. скорость: <b>290 км/ч</b></span>
+        <span class="go">Открыть телеметрию &rarr;</span>
+      </div>
+    </div>
+  </a>
+</div></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html" class="active">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -60,7 +122,6 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 

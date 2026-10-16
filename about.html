@@ -4,35 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>О сайте | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="favicon.ico">
 </head>
 <body>
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="index.html">APEX<span>-LOG</span></a>
-    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Про апексы</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html" class="active">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html" class="active">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<h1>О сайте</h1>
-<p>Меня зовут Никита, я учусь в Московском Политехе (группа 233-321, заочка). Сайт сделан как учебный проект по дисциплине &laquo;Веб-аналитика&raquo;: на нём я ставлю счётчики и смотрю статистику. Тема - потому что люблю автоспорт и гоночные симуляторы.</p>
-<h2>Откуда данные</h2>
+<section class="hero"><div class="bar">
+  <h1>О сайте</h1>
+  <p class="lead">Телеметрия трасс и апексы.</p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><p class="big">Апекс-лог собирает телеметрию гоночных трасс и точки апексов: схемы трасс, дистанции и скорости в поворотах, профили скорости, газа и тормоза по кругу.</p>
+<h2>Источники данных</h2>
 <ul>
-  <li>Длины трасс, число поворотов, названия поворотов и рекорды круга - сайты трасс и Википедия.</li>
-  <li>Скорости в апексах - по онбордам и по симулятору.</li>
-  <li>Графики скорости, газа и тормоза строит скрипт js/data.js по скоростям в апексах (разгон между поворотами, торможение перед ними).</li>
-</ul>
-<h2>Картинки</h2>
-<p class="small">Карты трасс взяты с Wikimedia Commons (commons.wikimedia.org), уменьшены мной:</p>
-<ul class="small"><li>Монца: &laquo;Monza track map.svg&raquo;, автор Will Pittenger, CC BY-SA 3.0</li><li>Спа: &laquo;Spa-Francorchamps of Belgium.svg&raquo;, автор Will Pittenger, CC BY-SA 3.0</li><li>Сузука: &laquo;Suzuka circuit map--2005.svg&raquo;, автор Will Pittenger, CC BY-SA 3.0</li><li>Сильверстоун: &laquo;Silverstone Circuit 2020.png&raquo;, автор Antoine266, CC BY-SA 4.0</li><li>Нордшляйфе: &laquo;Nürburgring - Nordschleife.svg&raquo;, автор Will Pittenger, общественное достояние</li><li>Монако: &laquo;Monte Carlo Formula 1 track map.svg&raquo;, автор Will Pittenger, CC BY-SA 3.0</li></ul>
-<p class="small">Лицензии CC BY-SA позволяют использовать картинки с указанием автора и лицензии.</p>
-<h2>Технически</h2>
-<p>Обычные HTML, CSS и JavaScript, без фреймворков. Графики рисуются на canvas, анимация - SVG. Хостинг - GitHub Pages.</p>
-<p>Нашли ошибку в названии поворота или скорости? Пишите в issues репозитория.</p>
+  <li>Длины трасс, названия поворотов и рекорды круга - официальные сайты трасс и Википедия.</li>
+  <li>Скорости в апексах - по бортовым записям.</li>
+  <li>Профили скорости, газа и тормоза рассчитываются скриптом js/data.js по скоростям в апексах.</li>
+</ul></div></section>
+<section class="sec alt"><div class="bar"><h2>Изображения</h2>
+<p class="note">Карты трасс - Wikimedia Commons: Монца, Спа, Сузука, Нордшляйфе, Монако - автор Will Pittenger (CC BY-SA 3.0; Нордшляйфе - общественное достояние); Сильверстоун - автор Antoine266 (CC BY-SA 4.0). Линии трасс в анимации построены по исходным SVG этих файлов.</p></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html" class="active">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -41,7 +45,6 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 
