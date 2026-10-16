@@ -4,29 +4,40 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Монца | Апекс-лог</title>
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="icon" href="../favicon.ico">
 </head>
 <body data-track="monza">
 <header class="top">
-  <div class="wrap">
-    <a class="logo" href="../index.html">APEX<span>-LOG</span></a>
-    <nav><a href="../index.html">Главная</a><a href="../tracks.html">Трассы</a><a href="../telemetry.html">Телеметрия</a><a href="../apex.html">Про апексы</a><a href="../files.html">Файлы</a><a href="../stats.html">Статистика</a><a href="../about.html">О сайте</a></nav>
+  <div class="bar">
+    <a class="logo" href="../index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="../index.html">Главная</a><a href="../tracks.html" class="active">Трассы</a><a href="../telemetry.html">Телеметрия</a><a href="../apex.html">Апексы</a><a href="../schedule.html">Расписание</a><a href="../simracing.html">Симрейсинг</a><a href="../files.html">Файлы</a><a href="../stats.html">Статистика</a><a href="../about.html">О сайте</a></nav>
   </div>
 </header>
-<main class="wrap">
-<p class="small"><a href="../tracks.html">Трассы</a> / Монца</p>
-<h1>Монца <span class="small">(Autodromo Nazionale Monza, Италия)</span></h1>
-<div class="two-col">
-  <div>
-    <svg id="map" class="map" viewBox="0 0 300 200">
+<section class="hero hero-sm"><div class="bar">
+  <p class="crumbs"><a href="../tracks.html">Трассы</a> / Италия</p>
+  <h1>Монца</h1>
+  <p class="lead">Autodromo Nazionale Monza</p>
+  <div class="facts">
+    <div><b>5.793</b><span>км, длина круга</span></div>
+    <div><b>11</b><span>поворотов</span></div>
+    <div><b>342</b><span>км/ч, макс. скорость</span></div>
+    <div><b>1:21.046</b><span>рекорд круга</span></div>
+  </div>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><div class="two-col">
+  <div class="col-map">
+    <svg id="map" class="map" viewBox="0 0 1000 600" role="img" aria-label="Схема трассы Монца">
       <path class="road" d=""></path>
       <path class="road-in" d=""></path>
-      <circle class="car" r="5" cx="-10" cy="-10"></circle>
+      <circle class="car" r="9" cx="-20" cy="-20"></circle>
     </svg>
-    <p class="small">Красная точка - машина, едет со скоростью из графика ниже (ускорено). Сейчас: <b id="cur-speed">0</b> км/ч</p>
+    <p class="note">Линия трассы снята с исходного SVG на Wikimedia Commons. Красная точка - машина, движется по ходу гонки со скоростью из графика ниже (ускорено). Сейчас: <b id="cur-speed">0</b> км/ч. Жёлтые точки - апексы.</p>
   </div>
   <div>
+    <h2>О трассе</h2>
+    <p>Самая быстрая трасса календаря, &laquo;храм скорости&raquo;. Почти весь круг едут в полный газ, а время теряют и находят на трёх шиканах. Машины ставят с минимальной прижимной силой, поэтому в Лесмо и Параболике они заметно скользят.</p>
     <table class="data">
       <tr><th>Длина круга</th><td>5793 м</td></tr>
       <tr><th>Поворотов</th><td>11</td></tr>
@@ -35,29 +46,31 @@
       <tr><th>Полный газ</th><td><span id="full-thr">-</span> % дистанции</td></tr>
       <tr><th>Торможение</th><td><span id="brk-share">-</span> % дистанции</td></tr>
     </table>
-    <p>Самая быстрая трасса календаря, &laquo;храм скорости&raquo;. Почти весь круг едут в полный газ, а время теряют и находят на трёх шиканах. Машины ставят с минимальной прижимной силой, поэтому в Лесмо и Параболике они заметно скользят.</p>
   </div>
-</div>
-<h2>Карта трассы</h2>
-<p><img class="trackimg" src="../img/tracks/monza.png" alt="Карта трассы Монца"><br>
-<span class="small">Карта: &laquo;Monza track map.svg&raquo;, автор Will Pittenger, Wikimedia Commons, CC BY-SA 3.0.</span></p>
-<div><div>
-  </div>
-</div>
-<h2>Апексы</h2>
+</div></div></section>
+<section class="sec alt"><div class="bar"><h2>Карта трассы</h2>
+<img class="trackimg" src="../img/tracks/monza.png" alt="Карта трассы Монца">
+<p class="note">Карта: &laquo;Monza track map.svg&raquo;, автор Will Pittenger, Wikimedia Commons, CC BY-SA 3.0.</p></div></section>
+<section class="sec "><div class="bar"><h2>Апексы</h2>
 <table class="data">
   <thead><tr><th>№</th><th>Поворот</th><th>Дистанция, м</th><th>Скорость в апексе, км/ч</th><th>Передача</th></tr></thead>
   <tbody id="apex-table"></tbody>
 </table>
-<p>Таблицу можно скачать: <a href="../files/apex_monza.csv" download>apex_monza.csv</a>, а телеметрию круга - <a href="../files/telemetry_monza.csv" download>telemetry_monza.csv</a>.</p>
-<h2>Телеметрия круга</h2>
+<p>Данные в CSV: <a href="../files/apex_monza.csv" download>apex_monza.csv</a>, телеметрия круга - <a href="../files/telemetry_monza.csv" download>telemetry_monza.csv</a>.</p></div></section>
+<section class="sec alt"><div class="bar"><h2>Телеметрия круга</h2>
 <canvas id="c-speed" class="chart"></canvas>
 <canvas id="c-thr" class="chart" style="height:120px"></canvas>
 <canvas id="c-brk" class="chart" style="height:120px"></canvas>
-<p class="small">Пунктир - границы секторов. Сектор 1 начинается от линии старта.</p>
+<p class="note">Пунктир - границы секторов. Сектор 1 начинается от линии старта.</p></div></section>
+
 </main>
 <footer>
-  <div class="wrap">
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="../index.html">Главная</a><a href="../tracks.html" class="active">Трассы</a><a href="../telemetry.html">Телеметрия</a><a href="../apex.html">Апексы</a><a href="../schedule.html">Расписание</a><a href="../simracing.html">Симрейсинг</a><a href="../files.html">Файлы</a><a href="../stats.html">Статистика</a><a href="../about.html">О сайте</a></div>
     <div class="counters">
       <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
       <span class="ph" id="li-counter">LiveInternet</span>
@@ -66,10 +79,10 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 <script src="../js/data.js"></script>
+<script src="../js/paths.js"></script>
 <script src="../js/charts.js"></script>
 <script src="../js/track.js"></script>
 </body>

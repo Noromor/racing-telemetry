@@ -1,4 +1,4 @@
-// Простые графики на canvas. Chart.js подключать не стал - хотелось разобраться самому.
+// Простые графики на canvas. Без сторонних библиотек.
 function drawChart(canvas, data, key, color, maxY, label, sectors) {
   var dpr = window.devicePixelRatio || 1;
   var w = canvas.clientWidth, h = canvas.clientHeight;
@@ -8,9 +8,9 @@ function drawChart(canvas, data, key, color, maxY, label, sectors) {
   var pl = 40, pb = 20, pt = 15;
   var maxX = data[data.length - 1].d;
   c.clearRect(0, 0, w, h);
-  c.font = "10px Verdana";
-  c.fillStyle = "#666";
-  c.strokeStyle = "#e5e5e5";
+  c.font = "11px Arial";
+  c.fillStyle = "#5b6b85";
+  c.strokeStyle = "#e3e8f0";
   var stepY = maxY > 100 ? 50 : 25;
   for (var y = 0; y <= maxY; y += stepY) {
     var yy = h - pb - (y / maxY) * (h - pb - pt);
@@ -56,7 +56,7 @@ function animateTrace(canvas, data, maxY) {
     var px = 40 + (data[i].d / maxX) * (w - 45);
     var py = h - 20 - (data[i].speed / maxY) * (h - 35);
     c.save(); c.setTransform(dpr, 0, 0, dpr, 0, 0);
-    c.fillStyle = "#c8102e";
+    c.fillStyle = "#d7192b";
     c.beginPath(); c.arc(px, py, 4, 0, 6.3); c.fill();
     c.fillStyle = "#000";
     c.fillText(data[i].speed + " км/ч", Math.min(px + 6, w - 60), py - 6);

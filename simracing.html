@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Симрейсинг | Апекс-лог</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
+    <nav><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html" class="active">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></nav>
+  </div>
+</header>
+<section class="hero"><div class="bar">
+  <h1>Симрейсинг</h1>
+  <p class="lead">Симуляторы, лиги и телеметрия.</p>
+</div></section>
+<main>
+<section class="sec "><div class="bar"><p class="big">Симрейсинг - гонки в симуляторах с реалистичной физикой. Для пилотов это тренировка между гонками, для многих - самостоятельный вид спорта с лигами, чемпионатами и командами.</p>
+<h2>Популярные симуляторы</h2>
+<table class="data">
+  <thead><tr><th>Симулятор</th><th>Чем известен</th></tr></thead>
+  <tbody>
+    <tr><td>iRacing</td><td>Онлайн-сервис по подписке, рейтинги iRating и Safety Rating, лазерно сканированные трассы, официальные серии по расписанию.</td></tr>
+    <tr><td>Assetto Corsa Competizione</td><td>Официальная игра GT World Challenge, машины GT3 и GT4, детальная модель шин и погоды.</td></tr>
+    <tr><td>Assetto Corsa / Assetto Corsa EVO</td><td>Открыт для модов, огромный выбор машин и трасс, в том числе Нордшляйфе.</td></tr>
+    <tr><td>Le Mans Ultimate</td><td>Официальный симулятор WEC: Hypercar, LMP2, LMGT3 и 24 часа Ле-Мана.</td></tr>
+    <tr><td>rFactor 2</td><td>Платформа многих киберспортивных лиг, гибкая физика и динамическая трасса.</td></tr>
+    <tr><td>Automobilista 2</td><td>Широкий выбор классов, включая исторические машины и бразильские трассы.</td></tr>
+  </tbody>
+</table></div></section>
+<section class="sec alt"><div class="bar"><h2>Лиги и соревнования</h2>
+<ul>
+  <li><b>Официальные серии iRacing</b> - заезды по расписанию с разбивкой по рейтингу.</li>
+  <li><b>Le Mans Virtual Series</b> и <b>F1 Sim Racing</b> - профессиональные чемпионаты с командами реальных производителей.</li>
+  <li><b>Ежедневные гонки</b> - короткие заезды с регистрацией и рейтингом, например <a href="https://gripline.site/daily">GRIPLINE Daily</a> в ACC (см. <a href="schedule.html#sim">расписание</a>).</li>
+  <li><b>Любительские лиги</b> - сезонные чемпионаты по выходным, часто с эндуранс-гонками на 6-24 часа и сменой пилотов.</li>
+</ul></div></section>
+<section class="sec "><div class="bar"><h2>Как используется телеметрия</h2>
+<div class="cols3">
+  <div><span class="kicker">Сравнение кругов</span><p>Свой круг накладывают на круг быстрого пилота: по графику скорости видно, в каком повороте теряется время - раньше торможение, ниже скорость в апексе или позже газ.</p></div>
+  <div><span class="kicker">Точки торможения</span><p>График тормоза показывает, где начинается торможение и как плавно отпускается педаль. Это прямо связано с выбором апекса.</p></div>
+  <div><span class="kicker">Настройки машины</span><p>Обороты, передачи, температура и давление шин помогают подобрать передаточные числа, давление и аэродинамику под трассу.</p></div>
+</div>
+<p>Симуляторы выдают телеметрию через встроенные интерфейсы (shared memory, UDP); для анализа используют MoTeC i2, Garage 61, VRS и аналогичные программы. Графики на страницах <a href="tracks.html">трасс</a> устроены так же: скорость, газ и тормоз по дистанции круга.</p></div></section>
+
+</main>
+<footer>
+  <div class="bar foot">
+    <div>
+      <div class="logo">APEX<span>/</span>LOG</div>
+      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+    </div>
+    <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html" class="active">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></div>
+    <div class="counters">
+      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
+      <span class="ph" id="li-counter">LiveInternet</span>
+      <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
+      <span class="ph" id="top100-counter">Top-100</span>
+      <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
+      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
