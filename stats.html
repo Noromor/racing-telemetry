@@ -26,31 +26,32 @@
   <li><a href="stats/awstats/awstats.racing.html">Отчёт AWStats (HTML)</a></li>
   <li><a href="stats/rhit.txt">Вывод rhit (текст)</a></li>
 </ul></div></section>
-<section class="sec alt"><div class="bar"><h2>Сырой журнал</h2>
-<p>Фрагмент журнала (формат combined, первые 300 строк): <a href="stats/access_sample.log">access_sample.log</a>. Полный журнал: <a href="stats/access.log.gz">access.log.gz</a>.</p>
-<p class="note">IP-адреса в журнале взяты из диапазонов для документации (RFC 5737) и реальным пользователям не принадлежат.</p>
-<pre class="log" id="logtail">загрузка...</pre>
-<script>
-fetch("stats/access_sample.log").then(function (r) { return r.text(); }).then(function (t) {
-  document.getElementById("logtail").textContent = t.split("\n").slice(0, 25).join("\n");
-}).catch(function () { document.getElementById("logtail").textContent = "не удалось загрузить файл"; });
-</script></div></section>
 
 </main>
 <footer>
   <div class="bar foot">
     <div>
       <div class="logo">APEX<span>/</span>LOG</div>
-      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+      <p>Телеметрия гоночных трасс и точки апексов.</p>
+      <p class="copy">Зазуля Никита, 2026. Учебный проект</p>
     </div>
     <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html" class="active">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
-      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
-      <span class="ph" id="li-counter">LiveInternet</span>
+      <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licntEB2D" width="88" height="31" style="border:0" 
+title="LiveInternet: показано число просмотров и посетителей за 24 часа"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licntEB2D").src=
+"https://counter.yadro.ru/hit?t52.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+      <a class="li-link" href="https://www.liveinternet.ru/" target="_blank" rel="noopener">Статистика: LiveInternet</a>
       <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
-      <span class="ph" id="top100-counter">Top-100</span>
+      <span class="ph" id="top100-counter" hidden></span>
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
-      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+      <span class="ph" id="topmailru-counter" hidden></span>
     </div>
   </div>
 </footer>

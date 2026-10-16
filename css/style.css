@@ -141,3 +141,8 @@ footer .counters span.ph { display: inline-block; width: 88px; height: 31px; bor
   nav a { font-size: 12px; }
   .hero-main::after { display: none; }
 }
+footer .copy { color: #c9d3e6; margin-top: 6px; }
+footer .counters { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+footer .counters a.li-link { color: #c9d3e6; font-size: 13px; }
+footer .counters span.ph[hidden] { display: none; }
+.sec-head:has(> h2:only-child) { justify-content: flex-start; }

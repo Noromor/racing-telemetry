@@ -28,14 +28,16 @@
   <li><b>Поздний апекс</b> - торможение чуть раньше и глубже, зато выход прямее и полный газ раньше. Перед длинной прямой почти всегда выгоднее именно он.</li>
 </ul></div>
 <div class="col-map">
-<svg viewBox="0 0 320 180" class="map apex-fig">
-  <path d="M20,170 L20,80 Q20,20 80,20 L300,20" fill="none" stroke="#d5dbe6" stroke-width="40"/>
-  <path d="M28,170 L30,95 Q38,32 105,24 L300,30" fill="none" stroke="#0b1f3f" stroke-width="2" stroke-dasharray="5 3"/>
-  <path d="M30,170 L36,120 Q40,40 120,32 L300,22" fill="none" stroke="#d7192b" stroke-width="2"/>
-  <circle cx="44" cy="58" r="4" class="apex"/><text x="52" y="66">ранний апекс</text>
-  <circle cx="70" cy="38" r="4" class="apex"/><text x="78" y="52">поздний апекс</text>
+<svg viewBox="0 0 360 240" class="map apex-fig" role="img" aria-label="Схема: ранний и поздний апекс в правом повороте">
+  <path d="M60,240 L60,110 A60,60 0 0 1 120,50 L360,50" fill="none" stroke="#d5dbe6" stroke-width="60"/>
+  <path d="M36,240 L36,190 C36,150 78.7,118.4 89.2,95.6 C101.8,68.3 140,24 190,24 L360,24" fill="none" stroke="#0b1f3f" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <path d="M36,240 L36,150 C36,115 85.6,88.4 105.6,79.2 C151,58.2 230,24 330,24 L360,24" fill="none" stroke="#d7192b" stroke-width="2.5"/>
+  <circle cx="89.2" cy="95.6" r="4.5" fill="#0b1f3f" stroke="#fff" stroke-width="1.5"/>
+  <circle cx="105.6" cy="79.2" r="4.5" fill="#d7192b" stroke="#fff" stroke-width="1.5"/>
+  <line x1="92" y1="100" x2="150" y2="165" stroke="#0b1f3f" stroke-width="1"/><text x="154" y="170" font-size="13" fill="#0b1f3f">ранний апекс</text>
+  <line x1="109" y1="83" x2="150" y2="125" stroke="#d7192b" stroke-width="1"/><text x="154" y="130" font-size="13" fill="#d7192b">поздний апекс</text>
 </svg>
-<p class="note">Схема: тёмно-синим - ранний апекс, красным - поздний.</p></div></div></div></section>
+<p class="note">Схема правого поворота: тёмно-синим пунктиром - траектория с ранним апексом (раньше касается внутренней кромки, на выходе машину выносит к внешнему краю), красным - с поздним апексом (поворот позже, выход прямее). Обе траектории - снаружи-внутрь-наружу.</p></div></div></div></section>
 <section class="sec alt"><div class="bar"><h2>Как это видно в телеметрии</h2>
 <p>На графике скорости апекс - локальный минимум. Если сравнить два круга, при позднем апексе минимум немного ниже, но после него кривая скорости растёт круче, и к концу прямой машина быстрее. На графике газа это видно по тому, как рано начинается участок 100 %.</p>
 <p><b>Trail braking</b> (торможение со входом в поворот): тормоз отпускают не сразу, а плавно до апекса. В модельной телеметрии сайта это не учитывается, тормоз там отпускается сразу.</p>
@@ -46,16 +48,26 @@
   <div class="bar foot">
     <div>
       <div class="logo">APEX<span>/</span>LOG</div>
-      <p>Телеметрия гоночных трасс и точки апексов. 2026.</p>
+      <p>Телеметрия гоночных трасс и точки апексов.</p>
+      <p class="copy">Зазуля Никита, 2026. Учебный проект</p>
     </div>
     <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html" class="active">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="stats.html">Статистика</a><a href="about.html">О сайте</a></div>
     <div class="counters">
-      <!-- LiveInternet counter: код вставить после регистрации на liveinternet.ru (LI_COUNTER_CODE) -->
-      <span class="ph" id="li-counter">LiveInternet</span>
+      <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licntEB2D" width="88" height="31" style="border:0" 
+title="LiveInternet: показано число просмотров и посетителей за 24 часа"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licntEB2D").src=
+"https://counter.yadro.ru/hit?t52.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+      <a class="li-link" href="https://www.liveinternet.ru/" target="_blank" rel="noopener">Статистика: LiveInternet</a>
       <!-- Top100 (Kraken) Counter: нужен id проекта, заменить RAMBLER_TOP100_ID -->
-      <span class="ph" id="top100-counter">Top-100</span>
+      <span class="ph" id="top100-counter" hidden></span>
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
-      <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
+      <span class="ph" id="topmailru-counter" hidden></span>
     </div>
   </div>
 </footer>
