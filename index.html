@@ -5,18 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Главная | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=b49af930">
+  <link rel="stylesheet" href="css/style.css?v=732f3276">
 </head>
-<body class="field-grey">
+<body class="home-page">
 <header class="top">
   <div class="bar">
     <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
     <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="teams.html">Команды</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
+<div class="stage" aria-hidden="true">
+  <div class="ph ph-hero"><div class="ph-img"></div><div class="stripes st-r"><i class="s-band"></i><i class="s-red"></i><i class="s-l1"></i><i class="s-l2"></i></div></div>
+  <div class="ph ph-field"><div class="ph-img"></div><div class="stripes st-l"><i class="s-band"></i><i class="s-red"></i><i class="s-l1"></i><i class="s-l2"></i></div></div>
+  <div class="stage-ov"></div>
+</div>
 <section class="hero hero-main">
-<div class="hero-car" aria-hidden="true"></div>
-<div class="hero-stripes" aria-hidden="true"><i class="s-band"></i><i class="s-red"></i><i class="s-l1"></i><i class="s-l2"></i></div>
 <div class="bar">
   <h1 class="quote">«Я — скорость.»</h1>
   <p class="attr">Молния Маккуин, «Тачки»</p>
@@ -27,95 +30,108 @@
   </nav>
 </div></section>
 <main>
-<div class="field"><div class="field-bg" aria-hidden="true"><div class="field-car"></div><div class="field-stripes"><i class="s-band"></i><i class="s-red"></i><i class="s-l1"></i><i class="s-l2"></i></div></div>
+<div class="home">
 <section class="sec "><div class="bar"><div class="sec-head"><h2>Трассы</h2></div>
-<div class="grid">
+<div class="tracklist">
   <a class="card" href="tracks/monza.html">
-    <div class="card-img"><img src="img/tracks/monza.png" alt="Схема трассы Монца" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">01</span>
-      <h3>Монца</h3>
-      <span class="meta">Италия &middot; 5.793 км &middot; 11 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>1:21.046</b></span>
-        <span>Р. Баррикелло, Ferrari, 2004</span>
-        <span>Макс. скорость: <b>342 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/monza.png" alt="Схема трассы Монца" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">01</span>
+        <h3>Монца</h3>
+        <span class="meta">Италия &middot; 5.793 км &middot; 11 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
+    </div>
+    <div class="card-extra">
+      <div><b>1922</b><span>год открытия</span></div>
+      <div><b>16</b><span>конфигураций за историю, действующих: 3</span></div>
+      <div><b>1:21.046</b><span>рекорд круга, Р. Баррикелло, Ferrari, 2004</span></div>
     </div>
   </a>
   <a class="card" href="tracks/spa.html">
-    <div class="card-img"><img src="img/tracks/spa.png" alt="Схема трассы Спа-Франкоршам" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">02</span>
-      <h3>Спа-Франкоршам</h3>
-      <span class="meta">Бельгия &middot; 7.004 км &middot; 19 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>1:44.701</b></span>
-        <span>С. Перес, Red Bull, 2024</span>
-        <span>Макс. скорость: <b>330 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/spa.png" alt="Схема трассы Спа-Франкоршам" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">02</span>
+        <h3>Спа-Франкоршам</h3>
+        <span class="meta">Бельгия &middot; 7.004 км &middot; 19 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
+    </div>
+    <div class="card-extra">
+      <div><b>1921</b><span>год открытия</span></div>
+      <div><b>12</b><span>конфигураций за историю, действующих: 2</span></div>
+      <div><b>1:44.701</b><span>рекорд круга, С. Перес, Red Bull, 2024</span></div>
     </div>
   </a>
   <a class="card" href="tracks/suzuka.html">
-    <div class="card-img"><img src="img/tracks/suzuka.png" alt="Схема трассы Сузука" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">03</span>
-      <h3>Сузука</h3>
-      <span class="meta">Япония &middot; 5.807 км &middot; 18 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>1:30.983</b></span>
-        <span>Л. Хэмилтон, Mercedes, 2019</span>
-        <span>Макс. скорость: <b>318 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/suzuka.png" alt="Схема трассы Сузука" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">03</span>
+        <h3>Сузука</h3>
+        <span class="meta">Япония &middot; 5.807 км &middot; 18 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
+    </div>
+    <div class="card-extra">
+      <div><b>1962</b><span>год открытия</span></div>
+      <div><b>9</b><span>конфигураций за историю, действующих: 4</span></div>
+      <div><b>1:30.983</b><span>рекорд круга, Л. Хэмилтон, Mercedes, 2019</span></div>
     </div>
   </a>
   <a class="card" href="tracks/silverstone.html">
-    <div class="card-img"><img src="img/tracks/silverstone.png" alt="Схема трассы Сильверстоун" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">04</span>
-      <h3>Сильверстоун</h3>
-      <span class="meta">Великобритания &middot; 5.891 км &middot; 18 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>1:27.097</b></span>
-        <span>М. Ферстаппен, Red Bull, 2020</span>
-        <span>Макс. скорость: <b>325 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/silverstone.png" alt="Схема трассы Сильверстоун" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">04</span>
+        <h3>Сильверстоун</h3>
+        <span class="meta">Великобритания &middot; 5.891 км &middot; 18 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
+    </div>
+    <div class="card-extra">
+      <div><b>1948</b><span>год открытия</span></div>
+      <div><b>14</b><span>конфигураций за историю, действующих: 4</span></div>
+      <div><b>1:27.097</b><span>рекорд круга, М. Ферстаппен, Red Bull, 2020</span></div>
     </div>
   </a>
   <a class="card" href="tracks/nurburgring.html">
-    <div class="card-img"><img src="img/tracks/nurburgring.png" alt="Схема трассы Нюрбургринг Нордшляйфе" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">05</span>
-      <h3>Нюрбургринг Нордшляйфе</h3>
-      <span class="meta">Германия &middot; 20.832 км &middot; 73 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>5:19.546</b></span>
-        <span>Т. Бернхард, Porsche 919 Evo, 2018</span>
-        <span>Макс. скорость: <b>300 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/nurburgring.png" alt="Схема трассы Нюрбургринг Нордшляйфе" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">05</span>
+        <h3>Нюрбургринг Нордшляйфе</h3>
+        <span class="meta">Германия &middot; 20.832 км &middot; 73 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
+    </div>
+    <div class="card-extra">
+      <div><b>1927</b><span>год открытия</span></div>
+      <div><b>4</b><span>конфигураций вариантов Северной петли, действующих: 1</span></div>
+      <div><b>5:19.546</b><span>рекорд круга, Т. Бернхард, Porsche 919 Evo, 2018</span></div>
     </div>
   </a>
   <a class="card" href="tracks/monaco.html">
-    <div class="card-img"><img src="img/tracks/monaco.png" alt="Схема трассы Монако" loading="lazy"></div>
-    <div class="card-body">
-      <span class="num">06</span>
-      <h3>Монако</h3>
-      <span class="meta">Монако &middot; 3.337 км &middot; 19 пов.</span>
-      <div class="more">
-        <span>Рекорд круга: <b>1:12.909</b></span>
-        <span>Л. Хэмилтон, Mercedes, 2021</span>
-        <span>Макс. скорость: <b>290 км/ч</b></span>
+    <div class="card-main">
+      <div class="card-img"><img src="img/tracks/monaco.png" alt="Схема трассы Монако" loading="lazy"></div>
+      <div class="card-body">
+        <span class="num">06</span>
+        <h3>Монако</h3>
+        <span class="meta">Монако &middot; 3.337 км &middot; 19 пов.</span>
         <span class="go">Открыть телеметрию &rarr;</span>
       </div>
     </div>
+    <div class="card-extra">
+      <div><b>1929</b><span>год открытия</span></div>
+      <div><b>10</b><span>конфигураций за историю, действующих: 1</span></div>
+      <div><b>1:12.909</b><span>рекорд круга, Л. Хэмилтон, Mercedes, 2021</span></div>
+    </div>
   </a>
-</div></div></section>
-<section class="sec alt"><div class="bar"><div class="cols3">
+</div>
+<p class="src">Год открытия и число конфигураций - по инфобоксам Википедии: <a href="https://en.wikipedia.org/wiki/Monza_Circuit">Монца</a>, <a href="https://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps">Спа-Франкоршам</a>, <a href="https://en.wikipedia.org/wiki/Suzuka_International_Racing_Course">Сузука</a>, <a href="https://en.wikipedia.org/wiki/Silverstone_Circuit">Сильверстоун</a>, <a href="https://en.wikipedia.org/wiki/N%C3%BCrburgring">Нюрбургринг Нордшляйфе</a>, <a href="https://en.wikipedia.org/wiki/Circuit_de_Monaco">Монако</a>. Для Нюрбургринга указаны варианты Северной петли (Nordschleife).</p></div></section>
+<section class="sec "><div class="bar"><div class="cols3">
   <div><span class="kicker">Телеметрия</span><h3><a href="telemetry.html">Сравнение трасс</a></h3><p>Скорость по дистанции для нескольких трасс на одном графике и сводная таблица: средняя и минимальная скорость, доля полного газа.</p></div>
   <div><span class="kicker">Теория</span><h3><a href="apex.html">Что такое апекс</a></h3><p>Ранний, геометрический и поздний апекс и то, как каждый из них выглядит на графике скорости и газа.</p></div>
   <div><span class="kicker">Данные</span><h3><a href="files.html">Файлы CSV и PDF</a></h3><p>Точки апексов и телеметрия круга в CSV, краткий гайд по чтению телеметрии.</p></div>
@@ -182,11 +198,18 @@ alt=""/></a><script>(function(d,s){d.getElementById("licnt3189").src=
   </div>
 </footer>
 <script>
-(function(){var f=document.querySelector(".field");if(!f)return;
-var m=location.search.match(/[?&]field=(white|grey|light)/);if(m)document.body.className=document.body.className.replace(/field-\w+/,"field-"+m[1]);
-if(!("IntersectionObserver" in window)){f.classList.add("in");return;}
-var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){f.classList.add("in");io.disconnect();}});},{threshold:.12});
-io.observe(f);})();
+(function(){var h=document.querySelector(".ph-hero"),f=document.querySelector(".ph-field");if(!h||!f)return;
+var rm=matchMedia("(prefers-reduced-motion: reduce)"),tick=false;
+function upd(){tick=false;var p=Math.min(1,Math.max(0,scrollY/(innerHeight*1.1)));p=p*p*(3-2*p);
+var m=rm.matches?0:1;
+h.style.transform="translate3d("+(-28*p*m)+"%,0,0) scale("+(1+.06*p*m)+")";h.style.opacity=1-p;
+f.style.transform="translate3d("+(28*(1-p)*m)+"%,0,0)";f.style.opacity=p;}
+addEventListener("scroll",function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+addEventListener("resize",upd);upd();})();
+</script><script>
+(function(){if(!matchMedia("(hover: none)").matches)return;
+document.querySelectorAll(".card").forEach(function(c){c.addEventListener("click",function(e){
+if(!c.classList.contains("open")){e.preventDefault();document.querySelectorAll(".card.open").forEach(function(o){o.classList.remove("open");});c.classList.add("open");}});});})();
 </script>
 </body>
 </html>

@@ -55,22 +55,6 @@ nav a.active { color: #fff; border-bottom-color: var(--red); }
   overflow: hidden;
 }
 .hero .bar { position: relative; z-index: 3; }
-/* main hero: animated car layer + speed stripes */
-.hero-main { background-image: none; }
-.hero-car { position: absolute; inset: 0; z-index: 0;
-  background: linear-gradient(90deg, rgba(11,26,51,.8) 0%, rgba(11,26,51,.6) 45%, rgba(11,26,51,.5) 100%), url("../img/hero.jpg?v=08dd0334") center / cover no-repeat;
-  animation: car-in 1.2s cubic-bezier(.16,.84,.3,1) both; will-change: transform, filter; }
-.hero-stripes { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
-.hero-stripes i { position: absolute; display: block; top: -20%; height: 140%; transform: skewX(-20deg); animation: stripe-in .9s cubic-bezier(.2,.8,.3,1) both; }
-.hero-stripes .s-band { right: -6%; width: 22%; background: rgba(11,26,51,.85); animation-delay: .9s; }
-.hero-stripes .s-red { right: 17%; width: 10px; background: var(--red); animation-delay: 1.05s; }
-.hero-stripes .s-l1 { right: 20%; width: 3px; background: rgba(255,255,255,.75); animation-delay: 1.15s; }
-.hero-stripes .s-l2 { right: 23%; width: 2px; background: var(--red); opacity: .8; animation: stripe-in .9s cubic-bezier(.2,.8,.3,1) 1.25s both, drift 3s ease-in-out 2.2s infinite alternate; }
-@keyframes car-in { from { transform: translateX(35%); filter: blur(8px); opacity: .3; } 70% { filter: blur(1px); } to { transform: none; filter: none; opacity: 1; } }
-@keyframes stripe-in { from { transform: translateX(120vw) skewX(-20deg); } to { transform: skewX(-20deg); } }
-@keyframes drift { from { transform: skewX(-20deg); } to { transform: translateX(-18px) skewX(-20deg); } }
-@media (max-width: 700px) { .hero-stripes .s-band { width: 16%; right: -8%; } .hero-stripes .s-red { right: 7%; } .hero-stripes .s-l1 { right: 10%; } .hero-stripes .s-l2 { right: 12%; } }
-@media (prefers-reduced-motion: reduce) { .hero-car, .hero-stripes i { animation: none !important; } }
 .hero h1 { color: #fff; max-width: 1100px; }
 .hero .lead { font-size: clamp(18px, 1.8vw, 23px); color: #c9d3e6; max-width: 760px; margin: 0; }
 .hero-main { padding-top: clamp(70px, 10vw, 150px); padding-bottom: clamp(70px, 9vw, 130px); }
@@ -118,24 +102,6 @@ nav a.active { color: #fff; border-bottom-color: var(--red); }
 .cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; }
 .cols3 > div, .cols2 > div { border-top: 3px solid var(--red); padding-top: 16px; }
 .cols3 p, .cols2 p { color: #33425c; }
-
-/* карточки трасс */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
-.card { display: block; background: #fff; color: var(--ink); border: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; will-change: transform; }
-.card:hover { transform: scale(1.045); box-shadow: 0 26px 50px -18px rgba(11, 31, 63, .45); z-index: 2; color: var(--ink); border-color: var(--line); }
-.card-img { background: #fff; padding: 18px; border-bottom: 1px solid var(--line); overflow: hidden; }
-.card-img img { width: 100%; height: 190px; object-fit: contain; display: block; transition: transform .45s; }
-.card:hover .card-img img { transform: scale(1.05); }
-.card-body { padding: 18px 22px 22px; position: relative; }
-.card-body::before { content: ""; position: absolute; left: 0; top: 0; height: 3px; width: 0; background: var(--red); transition: width .35s; }
-.card:hover .card-body::before { width: 100%; }
-.card .num { font-size: 13px; font-weight: 800; color: var(--red); letter-spacing: .1em; }
-.card h3 { margin: 2px 0 4px; font-size: 24px; }
-.card .meta { font-size: 14px; color: var(--mute); }
-.card .more { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .4s, opacity .3s, margin .3s; }
-.card:hover .more, .card:focus .more { max-height: 160px; opacity: 1; margin-top: 12px; }
-.more span { display: block; font-size: 14px; color: #33425c; }
-.more .go { color: var(--red); font-weight: 700; margin-top: 8px; text-transform: uppercase; font-size: 13px; letter-spacing: .06em; }
 
 /* таблицы */
 table.data { border-collapse: collapse; width: 100%; font-size: 15px; background: #fff; }
@@ -188,52 +154,97 @@ footer .counters a.li-link { color: #c9d3e6; font-size: 13px; }
 footer .counters span.ph[hidden] { display: none; }
 .sec-head:has(> h2:only-child) { justify-content: flex-start; }
 
-/* главная: фон «поле» под героем (WEC), выезжает при прокрутке.
-   Вариант задаётся классом body: field-white | field-grey | field-light */
-.field { position: relative; overflow: hidden; isolation: isolate; background: #0b1a33; padding: clamp(18px, 3vw, 40px) 0; }
-.field-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.field-car { position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(11,26,51,.72), rgba(11,26,51,.6) 50%, rgba(11,26,51,.78)), url("../img/field.jpg?v=e6e0cde9") center / cover no-repeat;
-  transform: translateX(-35%); filter: blur(8px); opacity: 0; transition: transform 1.2s cubic-bezier(.16,.84,.3,1), filter 1.2s, opacity 1s; }
-.field-stripes i { position: absolute; display: block; top: -20%; height: 140%; transform: translateX(-120vw) skewX(-20deg); transition: transform .9s cubic-bezier(.2,.8,.3,1); }
-.field-stripes .s-band { left: -6%; width: 18%; background: rgba(11,26,51,.8); transition-delay: .7s; }
-.field-stripes .s-red { left: 14%; width: 10px; background: var(--red); transition-delay: .85s; }
-.field-stripes .s-l1 { left: 17%; width: 3px; background: rgba(255,255,255,.7); transition-delay: .95s; }
-.field-stripes .s-l2 { left: 20%; width: 2px; background: var(--red); opacity: .8; transition-delay: 1.05s; }
-.field.in .field-car { transform: none; filter: none; opacity: 1; }
-.field.in .field-stripes i { transform: skewX(-20deg); }
-@media (prefers-reduced-motion: reduce) { .field-car, .field-stripes i { transition: none !important; } }
-/* секции превращаются в панели поверх фото */
-.field .sec { border: 0; padding: clamp(10px, 1.6vw, 20px) 0; background: transparent; }
-.field .sec > .bar { padding-top: clamp(26px, 3.5vw, 48px); padding-bottom: clamp(26px, 3.5vw, 48px); box-shadow: 0 24px 50px -24px rgba(0,0,0,.6); max-width: calc(1440px - 2 * clamp(20px, 5vw, 72px)); width: calc(100% - 2 * clamp(14px, 4vw, 56px)); }
-.field-white .field .sec > .bar { background: #fff; }
-.field-light .field .sec > .bar { background: #e9ebee; }
-.field-light .field .card, .field-light .field .card-img { border-color: #d5d9df; }
-.field-grey .field .sec > .bar { background: rgba(43,47,54,.94); color: #e6e9ee; border-top: 3px solid var(--red); }
-.field-grey .field h2, .field-grey .field h3 a { color: #fff; }
-.field-grey .field .sec-head { border-bottom-color: #fff; }
-.field-grey .field .cols3 p, .field-grey .field .cols2 p { color: #c3c9d3; }
-.field-grey .field .kicker { color: #ff5a68; }
-.field-grey .field .card { border-color: #3d424b; }
-
-/* карточки трасс: тёмно-синие, белый текст, красные акценты */
-.card { background: #0b1a33; color: #fff; border: 1px solid #1d3866; }
-.card:hover { color: #fff; border-color: var(--red); box-shadow: 0 26px 50px -18px rgba(0,0,0,.7); }
-.card-img { background: #0b1a33; border-bottom: 1px solid #1d3866; }
-.card-img img { filter: invert(1) hue-rotate(180deg) brightness(1.05); mix-blend-mode: lighten; }
-.card h3 { color: #fff; }
-.card .meta { color: #9fb0cc; }
-.card .more { color: #d6deeb; }
-.card .more b { color: #fff; }
-.card .go { color: var(--red); font-weight: 700; }
-.field-grey .field .card { border-color: #1d3866; }
-.field-grey .field .card:hover { border-color: var(--red); }
-/* фото под всей главной ниже hero, приглушённое */
-body.field-grey { background: #2b2f36; }
-.field-grey .field-car { background: linear-gradient(180deg, rgba(11,26,51,.82), rgba(11,26,51,.74) 50%, rgba(11,26,51,.86)), url("../img/field.jpg?v=e6e0cde9") center top / cover no-repeat; }
 /* страница команд */
 table.teams td:first-child { font-weight: 800; color: var(--red); width: 56px; }
 table.teams td:nth-child(2) { font-weight: 600; color: var(--navy); }
 .sub { margin-top: 34px; }
 .sec .data { margin-bottom: 6px; }
 @media (max-width: 760px) { table.teams { font-size: 13px; } table.teams th, table.teams td { padding: 7px 6px; } }
+
+/* ===== фон-фото: общие страницы (field.jpg под тёмно-синей вуалью) ===== */
+body.photo-bg, body.home-page { background: #0b1a33; color: #e6ebf3; }
+body.photo-bg::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(11,26,51,.86), rgba(11,26,51,.8) 50%, rgba(11,26,51,.9)), url("../img/field.jpg") center / cover no-repeat; }
+.photo-bg .hero, .home-page .hero { background: transparent; }
+.photo-bg .sec, .home-page .sec { background: transparent; border-bottom: 1px solid rgba(255,255,255,.1); }
+.photo-bg .sec.alt { background: rgba(11,26,51,.35); }
+.photo-bg h2, .photo-bg h3, .photo-bg h3 a, .photo-bg .big,
+.home-page h2, .home-page h3, .home-page h3 a { color: #fff; }
+.photo-bg h3 a:hover, .home-page h3 a:hover { color: #ff5a68; }
+.photo-bg .sec-head, .home-page .sec-head { border-bottom-color: rgba(255,255,255,.85); }
+.photo-bg .note, .photo-bg .small, .photo-bg .src, .home-page .src { color: #aebbd2; }
+.photo-bg a, .home-page a { color: #ff6b78; border-bottom-color: rgba(255,107,120,.35); }
+.photo-bg a:hover, .home-page a:hover { color: #fff; border-bottom-color: #fff; }
+.photo-bg .kicker, .home-page .kicker { color: #ff5a68; }
+.photo-bg .cols3 p, .photo-bg .cols2 p, .home-page .cols3 p, .home-page .cols2 p { color: #d3dbe8; }
+.photo-bg table.data { color: var(--ink); }
+.photo-bg table.data .small { color: var(--mute); }
+.photo-bg table.data a { color: var(--red); }
+.photo-bg nav a, .home-page nav a, .photo-bg .logo, .home-page .logo, .photo-bg .crumbs a { border-bottom-color: transparent; }
+.photo-bg nav a, .home-page nav a { color: #c9d3e6; }
+.photo-bg nav a.active, .home-page nav a.active { color: #fff; border-bottom-color: var(--red); }
+.photo-bg .logo, .home-page .logo { color: #fff; }
+.photo-bg .foot-nav a, .home-page .foot-nav a, footer .counters a.li-link { color: #c9d3e6; border: 0; }
+
+/* ===== главная: фиксированная сцена из двух фото, связанная с прокруткой ===== */
+.stage { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.ph { position: absolute; inset: -2% -4%; will-change: transform, opacity; }
+.ph-img { position: absolute; inset: 0; background: center / cover no-repeat; }
+.ph-hero .ph-img { background-image: url("../img/hero.jpg"); }
+.ph-field { opacity: 0; transform: translate3d(28%,0,0); }
+.ph-field .ph-img { background-image: url("../img/field.jpg");
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%); mask-image: linear-gradient(90deg, transparent 0, #000 22%); }
+.ph-hero .ph-img { -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent 100%); mask-image: linear-gradient(90deg, #000 78%, transparent 100%); }
+.stage-ov { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,26,51,.84) 0%, rgba(11,26,51,.7) 50%, rgba(11,26,51,.6) 100%), linear-gradient(180deg, rgba(11,26,51,.2), rgba(11,26,51,.45)); }
+.stripes { position: absolute; inset: 0; }
+.stripes i { position: absolute; display: block; top: -20%; height: 140%; transform: skewX(-20deg); }
+.st-r .s-band { right: 2%; width: 20%; background: rgba(11,26,51,.8); }
+.st-r .s-red { right: 23%; width: 10px; background: var(--red); }
+.st-r .s-l1 { right: 26%; width: 3px; background: rgba(255,255,255,.7); }
+.st-r .s-l2 { right: 29%; width: 2px; background: var(--red); opacity: .8; }
+.st-l .s-band { left: 2%; width: 16%; background: rgba(11,26,51,.8); }
+.st-l .s-red { left: 20%; width: 10px; background: var(--red); }
+.st-l .s-l1 { left: 23%; width: 3px; background: rgba(255,255,255,.7); }
+.st-l .s-l2 { left: 26%; width: 2px; background: var(--red); opacity: .8; }
+.st-r i { animation: stripe-in .9s cubic-bezier(.2,.8,.3,1) both; }
+.st-r .s-red { animation-delay: .15s; } .st-r .s-l1 { animation-delay: .25s; } .st-r .s-l2 { animation-delay: .35s; }
+@keyframes stripe-in { from { transform: translateX(120vw) skewX(-20deg); } to { transform: skewX(-20deg); } }
+.home-page .hero-main { min-height: calc(100vh - 67px); display: flex; align-items: center; }
+.home-page .hero-main .bar { position: relative; }
+.home-page .quote, .home-page .hero-stack a { text-shadow: 0 2px 24px rgba(0,0,0,.45); }
+.home-page .attr { color: #c9d3e6; }
+.home .sec p { text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+@media (max-width: 700px) { .st-r .s-band { width: 14%; right: -6%; } .st-r .s-red { right: 9%; } .st-r .s-l1 { right: 12%; } .st-r .s-l2 { right: 14%; } }
+@media (prefers-reduced-motion: reduce) { .st-r i { animation: none; } }
+
+/* ===== карточки трасс: одна колонка, панель выезжает вправо ===== */
+.tracklist { display: flex; flex-direction: column; gap: 16px; }
+.card { position: relative; display: block; border: 0; color: #fff; overflow: hidden; outline: none; }
+.card:hover, .card:focus-visible { color: #fff; }
+.card-main { position: relative; z-index: 2; display: flex; align-items: center; gap: 22px; width: min(100%, 620px);
+  background: #0b1a33; border: 1px solid #1d3866; border-left: 4px solid var(--red); padding: 14px 22px 14px 14px;
+  transition: border-color .35s, box-shadow .35s; }
+.card-img { flex: 0 0 150px; }
+.card-img img { width: 150px; height: 96px; object-fit: contain; display: block; filter: invert(1) hue-rotate(180deg) brightness(1.05); mix-blend-mode: lighten; }
+.card-body { display: flex; flex-direction: column; }
+.card .num { font-size: 13px; font-weight: 800; color: var(--red); letter-spacing: .1em; }
+.card h3 { margin: 0 0 2px; font-size: 24px; color: #fff; }
+.card .meta { font-size: 14px; color: #9fb0cc; }
+.card .go { color: #ff5a68; font-weight: 700; margin-top: 6px; text-transform: uppercase; font-size: 12px; letter-spacing: .06em; }
+.card-extra { position: absolute; z-index: 1; top: 0; bottom: 0; left: min(100%, 620px); right: 0; max-width: 640px;
+  display: grid; grid-template-columns: auto auto 1fr; gap: 0 26px; align-items: center; padding: 14px 26px;
+  background: #13294f; border: 1px solid #1d3866; border-left: 0;
+  transform: translate3d(-100%,0,0); opacity: 0; transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .35s; }
+.card-extra b { display: block; font-size: 26px; font-weight: 800; color: #fff; line-height: 1.1; }
+.card-extra span { display: block; font-size: 12px; color: #aebbd2; line-height: 1.35; max-width: 190px; }
+.card:hover .card-main, .card:focus-visible .card-main, .card.open .card-main { border-color: var(--red); box-shadow: 0 18px 40px -16px rgba(0,0,0,.8); }
+.card:hover .card-extra, .card:focus-visible .card-extra, .card.open .card-extra { transform: none; opacity: 1; }
+@media (max-width: 1000px) {
+  .card-main { width: 100%; }
+  .card-extra { position: static; max-width: none; grid-template-columns: 1fr 1fr 1fr; border-left: 4px solid var(--red); border-top: 0;
+    transform: translate3d(-24px,0,0); max-height: 0; padding: 0 18px; overflow: hidden; transition: transform .45s, opacity .35s, max-height .45s, padding .45s; }
+  .card:hover .card-extra, .card:focus-visible .card-extra, .card.open .card-extra { max-height: 240px; padding: 14px 18px; }
+}
+@media (max-width: 560px) { .card-img { flex-basis: 96px; } .card-img img { width: 96px; height: 64px; } .card-extra { grid-template-columns: 1fr; gap: 10px; } }
+@media (prefers-reduced-motion: reduce) { .card-extra, .card-main { transition: none; } }
+.home-page .hero-stack a { color: #fff; border: 0; } .home-page .hero-stack a:hover { color: var(--red); }
