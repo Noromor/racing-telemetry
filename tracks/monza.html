@@ -17,7 +17,6 @@
 <main class="wrap">
 <p class="small"><a href="../tracks.html">Трассы</a> / Монца</p>
 <h1>Монца <span class="small">(Autodromo Nazionale Monza, Италия)</span></h1>
-<div class="demo-note">Внимание: графики ниже построены на <b>демо-данных</b>. Скорости в апексах я примерно оценил сам, остальное считается скриптом. Это не настоящая телеметрия.</div>
 <div class="two-col">
   <div>
     <svg id="map" class="map" viewBox="0 0 300 200">
@@ -25,18 +24,24 @@
       <path class="road-in" d=""></path>
       <circle class="car" r="5" cx="-10" cy="-10"></circle>
     </svg>
-    <p class="small">Схема упрощённая, нарисована от руки по картинке. Красная точка - машина (скорость по демо-телеметрии, ускорено в 12 раз). Сейчас: <b id="cur-speed">0</b> км/ч</p>
+    <p class="small">Красная точка - машина, едет со скоростью из графика ниже (ускорено). Сейчас: <b id="cur-speed">0</b> км/ч</p>
   </div>
   <div>
     <table class="data">
       <tr><th>Длина круга</th><td>5793 м</td></tr>
       <tr><th>Поворотов</th><td>11</td></tr>
-      <tr><th>Макс. скорость (демо)</th><td>342 км/ч</td></tr>
-      <tr><th>Ориентир по кругу</th><td>1:21.0</td></tr>
-      <tr><th>Полный газ (демо)</th><td><span id="full-thr">-</span> % дистанции</td></tr>
-      <tr><th>Торможение (демо)</th><td><span id="brk-share">-</span> % дистанции</td></tr>
+      <tr><th>Макс. скорость</th><td>342 км/ч</td></tr>
+      <tr><th>Рекорд круга</th><td>1:21.046<br><span class="small">Р. Баррикелло, Ferrari, 2004</span></td></tr>
+      <tr><th>Полный газ</th><td><span id="full-thr">-</span> % дистанции</td></tr>
+      <tr><th>Торможение</th><td><span id="brk-share">-</span> % дистанции</td></tr>
     </table>
     <p>Самая быстрая трасса календаря, &laquo;храм скорости&raquo;. Почти весь круг едут в полный газ, а время теряют и находят на трёх шиканах. Машины ставят с минимальной прижимной силой, поэтому в Лесмо и Параболике они заметно скользят.</p>
+  </div>
+</div>
+<h2>Карта трассы</h2>
+<p><img class="trackimg" src="../img/tracks/monza.png" alt="Карта трассы Монца"><br>
+<span class="small">Карта: &laquo;Monza track map.svg&raquo;, автор Will Pittenger, Wikimedia Commons, CC BY-SA 3.0.</span></p>
+<div><div>
   </div>
 </div>
 <h2>Апексы</h2>
@@ -44,7 +49,7 @@
   <thead><tr><th>№</th><th>Поворот</th><th>Дистанция, м</th><th>Скорость в апексе, км/ч</th><th>Передача</th></tr></thead>
   <tbody id="apex-table"></tbody>
 </table>
-<p>Таблицу можно скачать: <a href="../files/apex_monza.csv" download>apex_monza.csv</a>, а всю демо-телеметрию круга - <a href="../files/telemetry_monza.csv" download>telemetry_monza.csv</a>.</p>
+<p>Таблицу можно скачать: <a href="../files/apex_monza.csv" download>apex_monza.csv</a>, а телеметрию круга - <a href="../files/telemetry_monza.csv" download>telemetry_monza.csv</a>.</p>
 <h2>Телеметрия круга</h2>
 <canvas id="c-speed" class="chart"></canvas>
 <canvas id="c-thr" class="chart" style="height:120px"></canvas>
@@ -61,8 +66,7 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
-    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 <script src="../js/data.js"></script>

@@ -16,35 +16,35 @@
 </header>
 <main class="wrap">
 <h1>Трассы</h1>
-<p>Пока на сайте шесть трасс. Выбирал те, которые сам больше всего смотрю (и в которые катаюсь в симуляторе). Может, потом добавлю Интерлагос и Сузуку в дождь.</p>
+<p>Пока на сайте шесть трасс. Выбирал те, которые сам больше всего смотрю (и в которые катаюсь в симуляторе). Может, потом добавлю Интерлагос.</p>
 <div class="tracks-list">
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="monza"></svg>
+    <img src="img/tracks/monza.png" alt="Монца" loading="lazy">
     <h3><a href="tracks/monza.html">Монца</a></h3>
     <div class="small">Италия &middot; 5.793 км &middot; 11 поворотов</div>
   </div>
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="spa"></svg>
+    <img src="img/tracks/spa.png" alt="Спа-Франкоршам" loading="lazy">
     <h3><a href="tracks/spa.html">Спа-Франкоршам</a></h3>
     <div class="small">Бельгия &middot; 7.004 км &middot; 19 поворотов</div>
   </div>
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="suzuka"></svg>
+    <img src="img/tracks/suzuka.png" alt="Сузука" loading="lazy">
     <h3><a href="tracks/suzuka.html">Сузука</a></h3>
     <div class="small">Япония &middot; 5.807 км &middot; 18 поворотов</div>
   </div>
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="silverstone"></svg>
+    <img src="img/tracks/silverstone.png" alt="Сильверстоун" loading="lazy">
     <h3><a href="tracks/silverstone.html">Сильверстоун</a></h3>
     <div class="small">Великобритания &middot; 5.891 км &middot; 18 поворотов</div>
   </div>
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="nurburgring"></svg>
-    <h3><a href="tracks/nurburgring.html">Нюрбургринг (ГП)</a></h3>
-    <div class="small">Германия &middot; 5.148 км &middot; 15 поворотов</div>
+    <img src="img/tracks/nurburgring.png" alt="Нюрбургринг Нордшляйфе" loading="lazy">
+    <h3><a href="tracks/nurburgring.html">Нюрбургринг Нордшляйфе</a></h3>
+    <div class="small">Германия &middot; 20.832 км &middot; 73 поворотов</div>
   </div>
   <div class="track-card">
-    <svg viewBox="0 0 300 200" data-outline="monaco"></svg>
+    <img src="img/tracks/monaco.png" alt="Монако" loading="lazy">
     <h3><a href="tracks/monaco.html">Монако</a></h3>
     <div class="small">Монако &middot; 3.337 км &middot; 19 поворотов</div>
   </div>
@@ -60,19 +60,9 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
-    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
-<script src="js/data.js"></script>
-<script src="js/charts.js"></script>
-<script>
-// рисуем маленькие схемы в карточках
-var svgs = document.querySelectorAll("svg[data-outline]");
-for (var i = 0; i < svgs.length; i++) {
-  var t = TRACKS[svgs[i].getAttribute("data-outline")];
-  svgs[i].innerHTML = '<path d="' + pathFromOutline(t.outline) + '" fill="none" stroke="#333" stroke-width="5" stroke-linejoin="round"/>';
-}
-</script>
+
 </body>
 </html>
