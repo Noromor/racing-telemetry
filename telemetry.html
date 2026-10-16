@@ -16,12 +16,11 @@
 </header>
 <main class="wrap">
 <h1>Сравнение телеметрии</h1>
-<div class="demo-note">Данные демонстрационные (см. <a href="about.html">О сайте</a>).</div>
-<p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видно разницу между Монцей (длинные прямые, почти всё время за 300) и Монако.</p>
-<p><label style="margin-right:12px"><input type="checkbox" value="monza" checked> Монца</label><label style="margin-right:12px"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label style="margin-right:12px"><input type="checkbox" value="suzuka"> Сузука</label><label style="margin-right:12px"><input type="checkbox" value="silverstone"> Сильверстоун</label><label style="margin-right:12px"><input type="checkbox" value="nurburgring"> Нюрбургринг (ГП)</label><label style="margin-right:12px"><input type="checkbox" value="monaco" checked> Монако</label></p>
+<p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видно разницу между Монцей (длинные прямые, почти всё время за 300) и Монако. Нордшляйфе по длине не помещается рядом с остальными, её лучше смотреть отдельно.</p>
+<p><label style="margin-right:12px"><input type="checkbox" value="monza" checked> Монца</label><label style="margin-right:12px"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label style="margin-right:12px"><input type="checkbox" value="suzuka"> Сузука</label><label style="margin-right:12px"><input type="checkbox" value="silverstone"> Сильверстоун</label><label style="margin-right:12px"><input type="checkbox" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label style="margin-right:12px"><input type="checkbox" value="monaco" checked> Монако</label></p>
 <canvas id="cmp" class="chart" style="height:300px"></canvas>
 <div class="legend" id="legend"></div>
-<h2>Сводная таблица (демо)</h2>
+<h2>Сводная таблица</h2>
 <table class="data" id="sum"><tr><th>Трасса</th><th>Средняя скорость, км/ч</th><th>Мин. скорость, км/ч</th><th>Полный газ, %</th><th>Апексов в таблице</th></tr></table>
 </main>
 <footer>
@@ -34,8 +33,7 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
-    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 <script src="js/data.js"></script>
@@ -48,10 +46,12 @@ function redraw() {
   var dpr = window.devicePixelRatio || 1;
   cv.width = cv.clientWidth * dpr; cv.height = cv.clientHeight * dpr;
   var c = cv.getContext("2d"); c.scale(dpr, dpr);
-  var w = cv.clientWidth, h = cv.clientHeight, maxX = 7100, maxY = 350;
+  var w = cv.clientWidth, h = cv.clientHeight, maxY = 350, maxX = 1000;
+  for (var q = 0; q < boxes.length; q++) if (boxes[q].checked) maxX = Math.max(maxX, TRACKS[boxes[q].value].length + 100);
   c.font = "10px Verdana"; c.fillStyle = "#666"; c.strokeStyle = "#e5e5e5";
   for (var y = 0; y <= maxY; y += 50) { var yy = h - 20 - y / maxY * (h - 30); c.beginPath(); c.moveTo(40, yy); c.lineTo(w, yy); c.stroke(); c.fillText(y, 8, yy + 3); }
-  for (var x = 0; x <= 7000; x += 1000) c.fillText(x / 1000 + " км", 40 + x / maxX * (w - 45) - 8, h - 5);
+  var stX = maxX > 10000 ? 2000 : 1000;
+  for (var x = 0; x <= maxX; x += stX) c.fillText(x / 1000 + " км", 40 + x / maxX * (w - 45) - 8, h - 5);
   var leg = "";
   for (var b = 0; b < boxes.length; b++) {
     if (!boxes[b].checked) continue;

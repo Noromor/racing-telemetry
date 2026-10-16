@@ -31,12 +31,29 @@ silverstone,5,"Maggotts-Becketts",2700,205,6
 silverstone,6,"Stowe",3900,238,6
 silverstone,7,"Vale",4600,108,3
 silverstone,8,"Club",5000,152,4
-nurburgring,1,"Castrol-S",300,86,2
-nurburgring,2,"Mercedes-Arena",900,108,3
-nurburgring,3,"Шпилька Dunlop",2100,70,2
-nurburgring,4,"Schumacher-S",2600,232,6
-nurburgring,5,"Bit-Kurve",3200,150,4
-nurburgring,6,"Шикана Veedol",4600,80,2
+nurburgring,1,"Hatzenbach",1200,130,3
+nurburgring,2,"Hocheichen",2400,150,4
+nurburgring,3,"Flugplatz",3000,200,5
+nurburgring,4,"Schwedenkreuz",4600,230,6
+nurburgring,5,"Aremberg",5100,85,2
+nurburgring,6,"Fuchsröhre",6000,240,6
+nurburgring,7,"Adenauer Forst",6600,80,2
+nurburgring,8,"Metzgesfeld",7300,140,3
+nurburgring,9,"Kallenhard",8000,110,3
+nurburgring,10,"Wehrseifen",8800,70,2
+nurburgring,11,"Breidscheid",9500,75,2
+nurburgring,12,"Ex-Mühle",9800,90,2
+nurburgring,13,"Bergwerk",10900,105,3
+nurburgring,14,"Kesselchen",11800,190,5
+nurburgring,15,"Klostertal",13000,120,3
+nurburgring,16,"Karussell",13600,70,2
+nurburgring,17,"Hohe Acht",14500,140,3
+nurburgring,18,"Wippermann",15000,110,3
+nurburgring,19,"Brünnchen",15900,120,3
+nurburgring,20,"Pflanzgarten",16600,170,4
+nurburgring,21,"Schwalbenschwanz",17800,110,3
+nurburgring,22,"Galgenkopf",18900,170,4
+nurburgring,23,"Tiergarten",20400,180,5
 monaco,1,"Sainte Devote",250,104,3
 monaco,2,"Massenet",700,158,4
 monaco,3,"Casino",850,118,3

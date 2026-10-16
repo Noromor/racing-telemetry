@@ -29,10 +29,11 @@
   // машинка едет по трассе со скоростью из телеметрии (ускорено)
   var car = svg.querySelector(".car");
   var pos = 0, last = null;
+  var speedup = Math.max(12, t.length / 480); // ускорение, чтобы круг шёл секунд 30-40
   function move(ts) {
     if (last !== null) {
       var idx = Math.min(tel.length - 1, Math.floor(pos / 10));
-      pos += tel[idx].speed / 3.6 * (ts - last) / 1000 * 12; // х12 чтобы не ждать полторы минуты
+      pos += tel[idx].speed / 3.6 * (ts - last) / 1000 * speedup;
       if (pos >= t.length) pos = 0;
       var pt = road.getPointAtLength(len * pos / t.length);
       car.setAttribute("cx", pt.x); car.setAttribute("cy", pt.y);
@@ -57,7 +58,7 @@
   drawChart(document.getElementById("c-brk"), tel, "brake", "#1f4fa8", 100, "Тормоз, %", t.sectors);
   animateTrace(document.getElementById("c-speed"), tel, 350);
 
-  // мини-статистика по демо-кругу
+  // мини-статистика по кругу
   var full = 0, br = 0;
   for (var i = 0; i < tel.length; i++) { if (tel[i].throttle === 100) full++; if (tel[i].brake > 0) br++; }
   document.getElementById("full-thr").textContent = Math.round(full / tel.length * 100);

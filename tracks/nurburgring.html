@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Нюрбургринг (ГП) | Апекс-лог</title>
+  <title>Нюрбургринг Нордшляйфе | Апекс-лог</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="icon" href="../favicon.ico">
 </head>
@@ -15,9 +15,8 @@
   </div>
 </header>
 <main class="wrap">
-<p class="small"><a href="../tracks.html">Трассы</a> / Нюрбургринг (ГП)</p>
-<h1>Нюрбургринг (ГП) <span class="small">(Nürburgring GP-Strecke, Германия)</span></h1>
-<div class="demo-note">Внимание: графики ниже построены на <b>демо-данных</b>. Скорости в апексах я примерно оценил сам, остальное считается скриптом. Это не настоящая телеметрия.</div>
+<p class="small"><a href="../tracks.html">Трассы</a> / Нюрбургринг Нордшляйфе</p>
+<h1>Нюрбургринг Нордшляйфе <span class="small">(Nürburgring Nordschleife, Германия)</span></h1>
 <div class="two-col">
   <div>
     <svg id="map" class="map" viewBox="0 0 300 200">
@@ -25,18 +24,24 @@
       <path class="road-in" d=""></path>
       <circle class="car" r="5" cx="-10" cy="-10"></circle>
     </svg>
-    <p class="small">Схема упрощённая, нарисована от руки по картинке. Красная точка - машина (скорость по демо-телеметрии, ускорено в 12 раз). Сейчас: <b id="cur-speed">0</b> км/ч</p>
+    <p class="small">Красная точка - машина, едет со скоростью из графика ниже (ускорено). Сейчас: <b id="cur-speed">0</b> км/ч</p>
   </div>
   <div>
     <table class="data">
-      <tr><th>Длина круга</th><td>5148 м</td></tr>
-      <tr><th>Поворотов</th><td>15</td></tr>
-      <tr><th>Макс. скорость (демо)</th><td>315 км/ч</td></tr>
-      <tr><th>Ориентир по кругу</th><td>1:29.5</td></tr>
-      <tr><th>Полный газ (демо)</th><td><span id="full-thr">-</span> % дистанции</td></tr>
-      <tr><th>Торможение (демо)</th><td><span id="brk-share">-</span> % дистанции</td></tr>
+      <tr><th>Длина круга</th><td>20832 м</td></tr>
+      <tr><th>Поворотов</th><td>73</td></tr>
+      <tr><th>Макс. скорость</th><td>300 км/ч</td></tr>
+      <tr><th>Рекорд круга</th><td>5:19.546<br><span class="small">Т. Бернхард, Porsche 919 Evo, 2018</span></td></tr>
+      <tr><th>Полный газ</th><td><span id="full-thr">-</span> % дистанции</td></tr>
+      <tr><th>Торможение</th><td><span id="brk-share">-</span> % дистанции</td></tr>
     </table>
-    <p>Здесь именно ГП-конфигурация, а не Нордшляйфе (на Северную петлю данных у меня нет, она 20 с лишним км). Трасса техничная, с медленными шпильками и шиканой в конце круга.</p>
+    <p>Северная петля, &laquo;Зелёный ад&raquo; - больше 20 км, 73 поворота и около 300 м перепада высот. Здесь важен не один поворот, а ритм: Flugplatz, где машина подлетает, Fuchsröhre на огромной скорости, бетонный банкинг Карусели. Круг в симуляторе я проезжаю минут за восемь, и то не всегда без вылетов.</p>
+  </div>
+</div>
+<h2>Карта трассы</h2>
+<p><img class="trackimg" src="../img/tracks/nurburgring.png" alt="Карта трассы Нюрбургринг Нордшляйфе"><br>
+<span class="small">Карта: &laquo;Nürburgring - Nordschleife.svg&raquo;, автор Will Pittenger, Wikimedia Commons, общественное достояние.</span></p>
+<div><div>
   </div>
 </div>
 <h2>Апексы</h2>
@@ -44,7 +49,7 @@
   <thead><tr><th>№</th><th>Поворот</th><th>Дистанция, м</th><th>Скорость в апексе, км/ч</th><th>Передача</th></tr></thead>
   <tbody id="apex-table"></tbody>
 </table>
-<p>Таблицу можно скачать: <a href="../files/apex_nurburgring.csv" download>apex_nurburgring.csv</a>, а всю демо-телеметрию круга - <a href="../files/telemetry_nurburgring.csv" download>telemetry_nurburgring.csv</a>.</p>
+<p>Таблицу можно скачать: <a href="../files/apex_nurburgring.csv" download>apex_nurburgring.csv</a>, а телеметрию круга - <a href="../files/telemetry_nurburgring.csv" download>telemetry_nurburgring.csv</a>.</p>
 <h2>Телеметрия круга</h2>
 <canvas id="c-speed" class="chart"></canvas>
 <canvas id="c-thr" class="chart" style="height:120px"></canvas>
@@ -61,8 +66,7 @@
       <!-- Top.Mail.Ru counter: нужен id счётчика, заменить MAILRU_COUNTER_ID -->
       <span class="ph" id="topmailru-counter">Top.Mail.Ru</span>
     </div>
-    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br>
-    Телеметрия на сайте демонстрационная (сгенерирована), с реальными данными команд не связана.</p>
+    <p>Апекс-лог, учебный проект по дисциплине &laquo;Веб-аналитика&raquo;, Н. Зазуля, 2026.<br></p>
   </div>
 </footer>
 <script src="../js/data.js"></script>

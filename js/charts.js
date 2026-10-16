@@ -17,7 +17,8 @@ function drawChart(canvas, data, key, color, maxY, label, sectors) {
     c.beginPath(); c.moveTo(pl, yy); c.lineTo(w - 5, yy); c.stroke();
     c.fillText(Math.round(y), 5, yy + 3);
   }
-  for (var x = 0; x <= maxX; x += 1000) {
+  var stepX = maxX > 10000 ? 2000 : 1000;
+  for (var x = 0; x <= maxX; x += stepX) {
     var xx = pl + (x / maxX) * (w - pl - 5);
     c.fillText(x / 1000 + " км", xx - 8, h - 5);
   }
