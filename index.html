@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Главная | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=a2fb11d5">
+  <link rel="stylesheet" href="css/style.css?v=b49af930">
 </head>
-<body>
+<body class="field-grey">
 <header class="top">
   <div class="bar">
     <a class="logo" href="index.html">APEX<span>/</span>LOG</a>
-    <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html">О сайте</a></nav>
+    <nav><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="teams.html">Команды</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html">О сайте</a></nav>
   </div>
 </header>
 <section class="hero hero-main">
@@ -22,11 +22,12 @@
   <p class="attr">Молния Маккуин, «Тачки»</p>
   <nav class="hero-stack" aria-label="Разделы">
     <a href="tracks.html">ТРАССЫ</a>
-    <a href="apex.html">АПЕКСЫ</a>
+    <a href="teams.html">КОМАНДЫ</a>
     <a href="schedule.html">РАСПИСАНИЕ</a>
   </nav>
 </div></section>
 <main>
+<div class="field"><div class="field-bg" aria-hidden="true"><div class="field-car"></div><div class="field-stripes"><i class="s-band"></i><i class="s-red"></i><i class="s-l1"></i><i class="s-l2"></i></div></div>
 <section class="sec "><div class="bar"><div class="sec-head"><h2>Трассы</h2></div>
 <div class="grid">
   <a class="card" href="tracks/monza.html">
@@ -120,10 +121,10 @@
   <div><span class="kicker">Данные</span><h3><a href="files.html">Файлы CSV и PDF</a></h3><p>Точки апексов и телеметрия круга в CSV, краткий гайд по чтению телеметрии.</p></div>
 </div></div></section>
 <section class="sec "><div class="bar"><div class="cols2">
-  <div><span class="kicker">Календарь</span><h3><a href="schedule.html">Расписание гонок 2026</a></h3><p>Этапы WEC, IMSA и ELMS сезона 2026 с датами и ссылками на официальные источники, а также ежедневные онлайн-заезды в симуляторе.</p></div>
+  <div><span class="kicker">Календарь</span><h3><a href="schedule.html">Расписание гонок 2026</a></h3><p>Этапы WEC, IMSA, ELMS и NASCAR Cup Series сезона 2026 с датами и ссылками на официальные источники, а также ежедневные онлайн-заезды в симуляторе.</p></div>
   <div><span class="kicker">Симрейсинг</span><h3><a href="simracing.html">Гоночные симуляторы</a></h3><p>Популярные симуляторы, лиги и то, как телеметрия помогает искать время на круге.</p></div>
 </div></div></section>
-
+</div>
 </main>
 <footer>
   <div class="bar foot">
@@ -132,7 +133,7 @@
       <p>Телеметрия гоночных трасс и точки апексов.</p>
       <p class="copy">Зазуля Никита, 2026. Учебный проект</p>
     </div>
-    <div class="foot-nav"><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html">О сайте</a></div>
+    <div class="foot-nav"><a href="index.html" class="active">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="teams.html">Команды</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html">О сайте</a></div>
     <div class="counters">
       <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
 target="_blank"><img id="licnt3189" width="88" height="31" style="border:0" 
@@ -180,6 +181,12 @@ alt=""/></a><script>(function(d,s){d.getElementById("licnt3189").src=
     </div>
   </div>
 </footer>
-
+<script>
+(function(){var f=document.querySelector(".field");if(!f)return;
+var m=location.search.match(/[?&]field=(white|grey|light)/);if(m)document.body.className=document.body.className.replace(/field-\w+/,"field-"+m[1]);
+if(!("IntersectionObserver" in window)){f.classList.add("in");return;}
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){f.classList.add("in");io.disconnect();}});},{threshold:.12});
+io.observe(f);})();
+</script>
 </body>
 </html>

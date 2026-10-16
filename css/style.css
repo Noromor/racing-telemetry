@@ -187,3 +187,53 @@ footer .counters { display: flex; align-items: center; gap: 12px; flex-wrap: wra
 footer .counters a.li-link { color: #c9d3e6; font-size: 13px; }
 footer .counters span.ph[hidden] { display: none; }
 .sec-head:has(> h2:only-child) { justify-content: flex-start; }
+
+/* главная: фон «поле» под героем (WEC), выезжает при прокрутке.
+   Вариант задаётся классом body: field-white | field-grey | field-light */
+.field { position: relative; overflow: hidden; isolation: isolate; background: #0b1a33; padding: clamp(18px, 3vw, 40px) 0; }
+.field-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.field-car { position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,26,51,.72), rgba(11,26,51,.6) 50%, rgba(11,26,51,.78)), url("../img/field.jpg?v=e6e0cde9") center / cover no-repeat;
+  transform: translateX(-35%); filter: blur(8px); opacity: 0; transition: transform 1.2s cubic-bezier(.16,.84,.3,1), filter 1.2s, opacity 1s; }
+.field-stripes i { position: absolute; display: block; top: -20%; height: 140%; transform: translateX(-120vw) skewX(-20deg); transition: transform .9s cubic-bezier(.2,.8,.3,1); }
+.field-stripes .s-band { left: -6%; width: 18%; background: rgba(11,26,51,.8); transition-delay: .7s; }
+.field-stripes .s-red { left: 14%; width: 10px; background: var(--red); transition-delay: .85s; }
+.field-stripes .s-l1 { left: 17%; width: 3px; background: rgba(255,255,255,.7); transition-delay: .95s; }
+.field-stripes .s-l2 { left: 20%; width: 2px; background: var(--red); opacity: .8; transition-delay: 1.05s; }
+.field.in .field-car { transform: none; filter: none; opacity: 1; }
+.field.in .field-stripes i { transform: skewX(-20deg); }
+@media (prefers-reduced-motion: reduce) { .field-car, .field-stripes i { transition: none !important; } }
+/* секции превращаются в панели поверх фото */
+.field .sec { border: 0; padding: clamp(10px, 1.6vw, 20px) 0; background: transparent; }
+.field .sec > .bar { padding-top: clamp(26px, 3.5vw, 48px); padding-bottom: clamp(26px, 3.5vw, 48px); box-shadow: 0 24px 50px -24px rgba(0,0,0,.6); max-width: calc(1440px - 2 * clamp(20px, 5vw, 72px)); width: calc(100% - 2 * clamp(14px, 4vw, 56px)); }
+.field-white .field .sec > .bar { background: #fff; }
+.field-light .field .sec > .bar { background: #e9ebee; }
+.field-light .field .card, .field-light .field .card-img { border-color: #d5d9df; }
+.field-grey .field .sec > .bar { background: rgba(43,47,54,.94); color: #e6e9ee; border-top: 3px solid var(--red); }
+.field-grey .field h2, .field-grey .field h3 a { color: #fff; }
+.field-grey .field .sec-head { border-bottom-color: #fff; }
+.field-grey .field .cols3 p, .field-grey .field .cols2 p { color: #c3c9d3; }
+.field-grey .field .kicker { color: #ff5a68; }
+.field-grey .field .card { border-color: #3d424b; }
+
+/* карточки трасс: тёмно-синие, белый текст, красные акценты */
+.card { background: #0b1a33; color: #fff; border: 1px solid #1d3866; }
+.card:hover { color: #fff; border-color: var(--red); box-shadow: 0 26px 50px -18px rgba(0,0,0,.7); }
+.card-img { background: #0b1a33; border-bottom: 1px solid #1d3866; }
+.card-img img { filter: invert(1) hue-rotate(180deg) brightness(1.05); mix-blend-mode: lighten; }
+.card h3 { color: #fff; }
+.card .meta { color: #9fb0cc; }
+.card .more { color: #d6deeb; }
+.card .more b { color: #fff; }
+.card .go { color: var(--red); font-weight: 700; }
+.field-grey .field .card { border-color: #1d3866; }
+.field-grey .field .card:hover { border-color: var(--red); }
+/* фото под всей главной ниже hero, приглушённое */
+body.field-grey { background: #2b2f36; }
+.field-grey .field-car { background: linear-gradient(180deg, rgba(11,26,51,.82), rgba(11,26,51,.74) 50%, rgba(11,26,51,.86)), url("../img/field.jpg?v=e6e0cde9") center top / cover no-repeat; }
+/* страница команд */
+table.teams td:first-child { font-weight: 800; color: var(--red); width: 56px; }
+table.teams td:nth-child(2) { font-weight: 600; color: var(--navy); }
+.sub { margin-top: 34px; }
+.sec .data { margin-bottom: 6px; }
+@media (max-width: 760px) { table.teams { font-size: 13px; } table.teams th, table.teams td { padding: 7px 6px; } }
