@@ -1,8 +1,36 @@
-track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
-monza,1,"Variante del Rettifilo",870,82,2
-monza,2,"Curva Biassono",1500,285,7
-monza,3,"Variante della Roggia",2150,118,3
-monza,4,"Lesmo 1",2650,185,5
-monza,5,"Lesmo 2",2950,172,4
-monza,6,"Variante Ascari",3800,205,5
-monza,7,"Parabolica (Alboreto)",5150,215,5
+track,class,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+monza,f1,1,"Variante del Rettifilo",870,82,2
+monza,f1,2,"Curva Biassono",1500,285,7
+monza,f1,3,"Variante della Roggia",2150,118,3
+monza,f1,4,"Lesmo 1",2650,185,5
+monza,f1,5,"Lesmo 2",2950,172,4
+monza,f1,6,"Variante Ascari",3800,205,5
+monza,f1,7,"Parabolica (Alboreto)",5150,215,5
+monza,hypercar,1,"Variante del Rettifilo",870,71,2
+monza,hypercar,2,"Curva Biassono",1500,242,6
+monza,hypercar,3,"Variante della Roggia",2150,96,3
+monza,hypercar,4,"Lesmo 1",2650,143,4
+monza,hypercar,5,"Lesmo 2",2950,133,3
+monza,hypercar,6,"Variante Ascari",3800,160,4
+monza,hypercar,7,"Parabolica (Alboreto)",5150,169,4
+monza,lmp2,1,"Variante del Rettifilo",870,71,2
+monza,lmp2,2,"Curva Biassono",1500,239,5
+monza,lmp2,3,"Variante della Roggia",2150,96,2
+monza,lmp2,4,"Lesmo 1",2650,141,3
+monza,lmp2,5,"Lesmo 2",2950,132,3
+monza,lmp2,6,"Variante Ascari",3800,158,3
+monza,lmp2,7,"Parabolica (Alboreto)",5150,167,4
+monza,lmp3,1,"Variante del Rettifilo",870,67,2
+monza,lmp3,2,"Curva Biassono",1500,219,5
+monza,lmp3,3,"Variante della Roggia",2150,90,2
+monza,lmp3,4,"Lesmo 1",2650,130,3
+monza,lmp3,5,"Lesmo 2",2950,122,3
+monza,lmp3,6,"Variante Ascari",3800,146,4
+monza,lmp3,7,"Parabolica (Alboreto)",5150,154,4
+monza,gt3,1,"Variante del Rettifilo",870,65,2
+monza,gt3,2,"Curva Biassono",1500,206,5
+monza,gt3,3,"Variante della Roggia",2150,85,2
+monza,gt3,4,"Lesmo 1",2650,121,3
+monza,gt3,5,"Lesmo 2",2950,113,3
+monza,gt3,6,"Variante Ascari",3800,136,3
+monza,gt3,7,"Parabolica (Alboreto)",5150,144,4

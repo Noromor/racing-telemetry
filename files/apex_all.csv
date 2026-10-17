@@ -1,67 +1,331 @@
-track,turn_no,turn_name,distance_m,apex_speed_kmh,gear
-monza,1,"Variante del Rettifilo",870,82,2
-monza,2,"Curva Biassono",1500,285,7
-monza,3,"Variante della Roggia",2150,118,3
-monza,4,"Lesmo 1",2650,185,5
-monza,5,"Lesmo 2",2950,172,4
-monza,6,"Variante Ascari",3800,205,5
-monza,7,"Parabolica (Alboreto)",5150,215,5
-spa,1,"La Source",420,64,2
-spa,2,"Raidillon",1050,292,7
-spa,3,"Les Combes",2400,138,4
-spa,4,"Bruxelles",3000,118,3
-spa,5,"Pouhon",3700,232,6
-spa,6,"Fagnes",4300,168,5
-spa,7,"Stavelot",5100,190,5
-spa,8,"Blanchimont",6000,305,8
-spa,9,"Bus Stop",6650,76,2
-suzuka,1,"Поворот 1",650,262,7
-suzuka,2,"S-кривые (Esses)",1200,198,5
-suzuka,3,"Degner 1",2300,212,6
-suzuka,4,"Degner 2",2450,142,4
-suzuka,5,"Шпилька (Hairpin)",2900,66,2
-suzuka,6,"Spoon",3900,156,4
-suzuka,7,"130R",4900,298,7
-suzuka,8,"Шикана Casio",5350,82,2
-silverstone,1,"Abbey",300,278,7
-silverstone,2,"Village",900,112,3
-silverstone,3,"The Loop",1100,72,2
-silverstone,4,"Copse",2000,292,7
-silverstone,5,"Maggotts-Becketts",2700,205,6
-silverstone,6,"Stowe",3900,238,6
-silverstone,7,"Vale",4600,108,3
-silverstone,8,"Club",5000,152,4
-nurburgring,1,"Hatzenbach",1200,130,3
-nurburgring,2,"Hocheichen",2400,150,4
-nurburgring,3,"Flugplatz",3000,200,5
-nurburgring,4,"Schwedenkreuz",4600,230,6
-nurburgring,5,"Aremberg",5100,85,2
-nurburgring,6,"Fuchsröhre",6000,240,6
-nurburgring,7,"Adenauer Forst",6600,80,2
-nurburgring,8,"Metzgesfeld",7300,140,3
-nurburgring,9,"Kallenhard",8000,110,3
-nurburgring,10,"Wehrseifen",8800,70,2
-nurburgring,11,"Breidscheid",9500,75,2
-nurburgring,12,"Ex-Mühle",9800,90,2
-nurburgring,13,"Bergwerk",10900,105,3
-nurburgring,14,"Kesselchen",11800,190,5
-nurburgring,15,"Klostertal",13000,120,3
-nurburgring,16,"Karussell",13600,70,2
-nurburgring,17,"Hohe Acht",14500,140,3
-nurburgring,18,"Wippermann",15000,110,3
-nurburgring,19,"Brünnchen",15900,120,3
-nurburgring,20,"Pflanzgarten",16600,170,4
-nurburgring,21,"Schwalbenschwanz",17800,110,3
-nurburgring,22,"Galgenkopf",18900,170,4
-nurburgring,23,"Tiergarten",20400,180,5
-monaco,1,"Sainte Devote",250,104,3
-monaco,2,"Massenet",700,158,4
-monaco,3,"Casino",850,118,3
-monaco,4,"Mirabeau",1100,74,2
-monaco,5,"Шпилька Fairmont",1250,48,1
-monaco,6,"Portier",1500,88,2
-monaco,7,"Нувель шикана",2050,84,2
-monaco,8,"Tabac",2300,168,4
-monaco,9,"Бассейн (Piscine)",2550,140,4
-monaco,10,"La Rascasse",3000,68,2
-monaco,11,"Anthony Noghes",3200,78,2
+track,class,turn_no,turn_name,distance_m,apex_speed_kmh,gear
+monza,f1,1,"Variante del Rettifilo",870,82,2
+monza,f1,2,"Curva Biassono",1500,285,7
+monza,f1,3,"Variante della Roggia",2150,118,3
+monza,f1,4,"Lesmo 1",2650,185,5
+monza,f1,5,"Lesmo 2",2950,172,4
+monza,f1,6,"Variante Ascari",3800,205,5
+monza,f1,7,"Parabolica (Alboreto)",5150,215,5
+monza,hypercar,1,"Variante del Rettifilo",870,71,2
+monza,hypercar,2,"Curva Biassono",1500,242,6
+monza,hypercar,3,"Variante della Roggia",2150,96,3
+monza,hypercar,4,"Lesmo 1",2650,143,4
+monza,hypercar,5,"Lesmo 2",2950,133,3
+monza,hypercar,6,"Variante Ascari",3800,160,4
+monza,hypercar,7,"Parabolica (Alboreto)",5150,169,4
+monza,lmp2,1,"Variante del Rettifilo",870,71,2
+monza,lmp2,2,"Curva Biassono",1500,239,5
+monza,lmp2,3,"Variante della Roggia",2150,96,2
+monza,lmp2,4,"Lesmo 1",2650,141,3
+monza,lmp2,5,"Lesmo 2",2950,132,3
+monza,lmp2,6,"Variante Ascari",3800,158,3
+monza,lmp2,7,"Parabolica (Alboreto)",5150,167,4
+monza,lmp3,1,"Variante del Rettifilo",870,67,2
+monza,lmp3,2,"Curva Biassono",1500,219,5
+monza,lmp3,3,"Variante della Roggia",2150,90,2
+monza,lmp3,4,"Lesmo 1",2650,130,3
+monza,lmp3,5,"Lesmo 2",2950,122,3
+monza,lmp3,6,"Variante Ascari",3800,146,4
+monza,lmp3,7,"Parabolica (Alboreto)",5150,154,4
+monza,gt3,1,"Variante del Rettifilo",870,65,2
+monza,gt3,2,"Curva Biassono",1500,206,5
+monza,gt3,3,"Variante della Roggia",2150,85,2
+monza,gt3,4,"Lesmo 1",2650,121,3
+monza,gt3,5,"Lesmo 2",2950,113,3
+monza,gt3,6,"Variante Ascari",3800,136,3
+monza,gt3,7,"Parabolica (Alboreto)",5150,144,4
+spa,f1,1,"La Source",420,64,2
+spa,f1,2,"Raidillon",1050,292,7
+spa,f1,3,"Les Combes",2400,138,4
+spa,f1,4,"Bruxelles",3000,118,3
+spa,f1,5,"Pouhon",3700,232,6
+spa,f1,6,"Fagnes",4300,168,5
+spa,f1,7,"Stavelot",5100,190,5
+spa,f1,8,"Blanchimont",6000,305,8
+spa,f1,9,"Bus Stop",6650,76,2
+spa,hypercar,1,"La Source",420,58,2
+spa,hypercar,2,"Raidillon",1050,251,6
+spa,hypercar,3,"Les Combes",2400,111,3
+spa,hypercar,4,"Bruxelles",3000,96,3
+spa,hypercar,5,"Pouhon",3700,185,5
+spa,hypercar,6,"Fagnes",4300,131,3
+spa,hypercar,7,"Stavelot",5100,147,4
+spa,hypercar,8,"Blanchimont",6000,268,6
+spa,hypercar,9,"Bus Stop",6650,67,2
+spa,lmp2,1,"La Source",420,57,2
+spa,lmp2,2,"Raidillon",1050,248,5
+spa,lmp2,3,"Les Combes",2400,110,3
+spa,lmp2,4,"Bruxelles",3000,96,2
+spa,lmp2,5,"Pouhon",3700,182,4
+spa,lmp2,6,"Fagnes",4300,129,3
+spa,lmp2,7,"Stavelot",5100,145,3
+spa,lmp2,8,"Blanchimont",6000,265,6
+spa,lmp2,9,"Bus Stop",6650,66,2
+spa,lmp3,1,"La Source",420,55,2
+spa,lmp3,2,"Raidillon",1050,227,5
+spa,lmp3,3,"Les Combes",2400,102,3
+spa,lmp3,4,"Bruxelles",3000,90,2
+spa,lmp3,5,"Pouhon",3700,168,4
+spa,lmp3,6,"Fagnes",4300,120,3
+spa,lmp3,7,"Stavelot",5100,134,3
+spa,lmp3,8,"Blanchimont",6000,242,6
+spa,lmp3,9,"Bus Stop",6650,63,2
+spa,gt3,1,"La Source",420,53,2
+spa,gt3,2,"Raidillon",1050,214,5
+spa,gt3,3,"Les Combes",2400,96,3
+spa,gt3,4,"Bruxelles",3000,85,2
+spa,gt3,5,"Pouhon",3700,157,4
+spa,gt3,6,"Fagnes",4300,111,3
+spa,gt3,7,"Stavelot",5100,124,3
+spa,gt3,8,"Blanchimont",6000,229,5
+spa,gt3,9,"Bus Stop",6650,61,2
+suzuka,f1,1,"Поворот 1",650,262,7
+suzuka,f1,2,"S-кривые (Esses)",1200,198,5
+suzuka,f1,3,"Degner 1",2300,212,6
+suzuka,f1,4,"Degner 2",2450,142,4
+suzuka,f1,5,"Шпилька (Hairpin)",2900,66,2
+suzuka,f1,6,"Spoon",3900,156,4
+suzuka,f1,7,"130R",4900,298,7
+suzuka,f1,8,"Шикана Casio",5350,82,2
+suzuka,hypercar,1,"Поворот 1",650,213,5
+suzuka,hypercar,2,"S-кривые (Esses)",1200,154,4
+suzuka,hypercar,3,"Degner 1",2300,167,4
+suzuka,hypercar,4,"Degner 2",2450,113,3
+suzuka,hypercar,5,"Шпилька (Hairpin)",2900,59,2
+suzuka,hypercar,6,"Spoon",3900,123,3
+suzuka,hypercar,7,"130R",4900,258,6
+suzuka,hypercar,8,"Шикана Casio",5350,71,2
+suzuka,lmp2,1,"Поворот 1",650,210,5
+suzuka,lmp2,2,"S-кривые (Esses)",1200,152,4
+suzuka,lmp2,3,"Degner 1",2300,165,4
+suzuka,lmp2,4,"Degner 2",2450,113,3
+suzuka,lmp2,5,"Шпилька (Hairpin)",2900,59,2
+suzuka,lmp2,6,"Spoon",3900,122,3
+suzuka,lmp2,7,"130R",4900,255,6
+suzuka,lmp2,8,"Шикана Casio",5350,71,2
+suzuka,lmp3,1,"Поворот 1",650,194,5
+suzuka,lmp3,2,"S-кривые (Esses)",1200,140,4
+suzuka,lmp3,3,"Degner 1",2300,152,4
+suzuka,lmp3,4,"Degner 2",2450,105,3
+suzuka,lmp3,5,"Шпилька (Hairpin)",2900,56,2
+suzuka,lmp3,6,"Spoon",3900,113,3
+suzuka,lmp3,7,"130R",4900,234,6
+suzuka,lmp3,8,"Шикана Casio",5350,67,2
+suzuka,gt3,1,"Поворот 1",650,181,5
+suzuka,gt3,2,"S-кривые (Esses)",1200,130,3
+suzuka,gt3,3,"Degner 1",2300,141,4
+suzuka,gt3,4,"Degner 2",2450,98,3
+suzuka,gt3,5,"Шпилька (Hairpin)",2900,55,2
+suzuka,gt3,6,"Spoon",3900,106,3
+suzuka,gt3,7,"130R",4900,221,5
+suzuka,gt3,8,"Шикана Casio",5350,65,2
+silverstone,f1,1,"Abbey",300,278,7
+silverstone,f1,2,"Village",900,112,3
+silverstone,f1,3,"The Loop",1100,72,2
+silverstone,f1,4,"Copse",2000,292,7
+silverstone,f1,5,"Maggotts-Becketts",2700,205,6
+silverstone,f1,6,"Stowe",3900,238,6
+silverstone,f1,7,"Vale",4600,108,3
+silverstone,f1,8,"Club",5000,152,4
+silverstone,hypercar,1,"Abbey",300,233,6
+silverstone,hypercar,2,"Village",900,92,3
+silverstone,hypercar,3,"The Loop",1100,64,2
+silverstone,hypercar,4,"Copse",2000,251,6
+silverstone,hypercar,5,"Maggotts-Becketts",2700,160,4
+silverstone,hypercar,6,"Stowe",3900,190,5
+silverstone,hypercar,7,"Vale",4600,89,3
+silverstone,hypercar,8,"Club",5000,120,3
+silverstone,lmp2,1,"Abbey",300,230,5
+silverstone,lmp2,2,"Village",900,92,2
+silverstone,lmp2,3,"The Loop",1100,63,2
+silverstone,lmp2,4,"Copse",2000,248,5
+silverstone,lmp2,5,"Maggotts-Becketts",2700,158,4
+silverstone,lmp2,6,"Stowe",3900,188,4
+silverstone,lmp2,7,"Vale",4600,89,2
+silverstone,lmp2,8,"Club",5000,119,3
+silverstone,lmp3,1,"Abbey",300,212,5
+silverstone,lmp3,2,"Village",900,86,2
+silverstone,lmp3,3,"The Loop",1100,61,2
+silverstone,lmp3,4,"Copse",2000,227,5
+silverstone,lmp3,5,"Maggotts-Becketts",2700,146,4
+silverstone,lmp3,6,"Stowe",3900,174,4
+silverstone,lmp3,7,"Vale",4600,83,2
+silverstone,lmp3,8,"Club",5000,111,3
+silverstone,gt3,1,"Abbey",300,198,5
+silverstone,gt3,2,"Village",900,81,2
+silverstone,gt3,3,"The Loop",1100,59,2
+silverstone,gt3,4,"Copse",2000,214,5
+silverstone,gt3,5,"Maggotts-Becketts",2700,136,4
+silverstone,gt3,6,"Stowe",3900,162,4
+silverstone,gt3,7,"Vale",4600,79,2
+silverstone,gt3,8,"Club",5000,104,3
+nurburgring,f1,1,"Hatzenbach",1200,130,3
+nurburgring,f1,2,"Hocheichen",2400,150,4
+nurburgring,f1,3,"Flugplatz",3000,200,5
+nurburgring,f1,4,"Schwedenkreuz",4600,230,6
+nurburgring,f1,5,"Aremberg",5100,85,2
+nurburgring,f1,6,"Fuchsröhre",6000,240,6
+nurburgring,f1,7,"Adenauer Forst",6600,80,2
+nurburgring,f1,8,"Metzgesfeld",7300,140,3
+nurburgring,f1,9,"Kallenhard",8000,110,3
+nurburgring,f1,10,"Wehrseifen",8800,70,2
+nurburgring,f1,11,"Breidscheid",9500,75,2
+nurburgring,f1,12,"Ex-Mühle",9800,90,2
+nurburgring,f1,13,"Bergwerk",10900,105,3
+nurburgring,f1,14,"Kesselchen",11800,190,5
+nurburgring,f1,15,"Klostertal",13000,120,3
+nurburgring,f1,16,"Karussell",13600,70,2
+nurburgring,f1,17,"Hohe Acht",14500,140,3
+nurburgring,f1,18,"Wippermann",15000,110,3
+nurburgring,f1,19,"Brünnchen",15900,120,3
+nurburgring,f1,20,"Pflanzgarten",16600,170,4
+nurburgring,f1,21,"Schwalbenschwanz",17800,110,3
+nurburgring,f1,22,"Galgenkopf",18900,170,4
+nurburgring,f1,23,"Tiergarten",20400,180,5
+nurburgring,hypercar,1,"Hatzenbach",1200,105,3
+nurburgring,hypercar,2,"Hocheichen",2400,119,3
+nurburgring,hypercar,3,"Flugplatz",3000,156,4
+nurburgring,hypercar,4,"Schwedenkreuz",4600,183,5
+nurburgring,hypercar,5,"Aremberg",5100,73,2
+nurburgring,hypercar,6,"Fuchsröhre",6000,192,5
+nurburgring,hypercar,7,"Adenauer Forst",6600,70,2
+nurburgring,hypercar,8,"Metzgesfeld",7300,112,3
+nurburgring,hypercar,9,"Kallenhard",8000,90,3
+nurburgring,hypercar,10,"Wehrseifen",8800,62,2
+nurburgring,hypercar,11,"Breidscheid",9500,66,2
+nurburgring,hypercar,12,"Ex-Mühle",9800,77,2
+nurburgring,hypercar,13,"Bergwerk",10900,87,3
+nurburgring,hypercar,14,"Kesselchen",11800,147,4
+nurburgring,hypercar,15,"Klostertal",13000,98,3
+nurburgring,hypercar,16,"Karussell",13600,62,2
+nurburgring,hypercar,17,"Hohe Acht",14500,112,3
+nurburgring,hypercar,18,"Wippermann",15000,90,3
+nurburgring,hypercar,19,"Brünnchen",15900,98,3
+nurburgring,hypercar,20,"Pflanzgarten",16600,132,4
+nurburgring,hypercar,21,"Schwalbenschwanz",17800,90,3
+nurburgring,hypercar,22,"Galgenkopf",18900,132,4
+nurburgring,hypercar,23,"Tiergarten",20400,139,4
+nurburgring,lmp2,1,"Hatzenbach",1200,104,3
+nurburgring,lmp2,2,"Hocheichen",2400,118,3
+nurburgring,lmp2,3,"Flugplatz",3000,154,4
+nurburgring,lmp2,4,"Schwedenkreuz",4600,181,4
+nurburgring,lmp2,5,"Aremberg",5100,73,2
+nurburgring,lmp2,6,"Fuchsröhre",6000,190,5
+nurburgring,lmp2,7,"Adenauer Forst",6600,69,2
+nurburgring,lmp2,8,"Metzgesfeld",7300,111,3
+nurburgring,lmp2,9,"Kallenhard",8000,90,2
+nurburgring,lmp2,10,"Wehrseifen",8800,62,2
+nurburgring,lmp2,11,"Breidscheid",9500,66,2
+nurburgring,lmp2,12,"Ex-Mühle",9800,76,2
+nurburgring,lmp2,13,"Bergwerk",10900,87,2
+nurburgring,lmp2,14,"Kesselchen",11800,145,4
+nurburgring,lmp2,15,"Klostertal",13000,98,3
+nurburgring,lmp2,16,"Karussell",13600,62,2
+nurburgring,lmp2,17,"Hohe Acht",14500,111,3
+nurburgring,lmp2,18,"Wippermann",15000,90,2
+nurburgring,lmp2,19,"Brünnchen",15900,98,3
+nurburgring,lmp2,20,"Pflanzgarten",16600,131,3
+nurburgring,lmp2,21,"Schwalbenschwanz",17800,90,2
+nurburgring,lmp2,22,"Galgenkopf",18900,131,3
+nurburgring,lmp2,23,"Tiergarten",20400,137,3
+nurburgring,lmp3,1,"Hatzenbach",1200,98,3
+nurburgring,lmp3,2,"Hocheichen",2400,110,3
+nurburgring,lmp3,3,"Flugplatz",3000,142,4
+nurburgring,lmp3,4,"Schwedenkreuz",4600,167,4
+nurburgring,lmp3,5,"Aremberg",5100,69,2
+nurburgring,lmp3,6,"Fuchsröhre",6000,175,5
+nurburgring,lmp3,7,"Adenauer Forst",6600,66,2
+nurburgring,lmp3,8,"Metzgesfeld",7300,104,3
+nurburgring,lmp3,9,"Kallenhard",8000,85,3
+nurburgring,lmp3,10,"Wehrseifen",8800,59,2
+nurburgring,lmp3,11,"Breidscheid",9500,63,2
+nurburgring,lmp3,12,"Ex-Mühle",9800,72,2
+nurburgring,lmp3,13,"Bergwerk",10900,81,2
+nurburgring,lmp3,14,"Kesselchen",11800,134,4
+nurburgring,lmp3,15,"Klostertal",13000,91,3
+nurburgring,lmp3,16,"Karussell",13600,59,2
+nurburgring,lmp3,17,"Hohe Acht",14500,104,3
+nurburgring,lmp3,18,"Wippermann",15000,85,3
+nurburgring,lmp3,19,"Brünnchen",15900,91,3
+nurburgring,lmp3,20,"Pflanzgarten",16600,121,3
+nurburgring,lmp3,21,"Schwalbenschwanz",17800,85,3
+nurburgring,lmp3,22,"Galgenkopf",18900,121,3
+nurburgring,lmp3,23,"Tiergarten",20400,126,3
+nurburgring,gt3,1,"Hatzenbach",1200,92,3
+nurburgring,gt3,2,"Hocheichen",2400,103,3
+nurburgring,gt3,3,"Flugplatz",3000,132,4
+nurburgring,gt3,4,"Schwedenkreuz",4600,155,4
+nurburgring,gt3,5,"Aremberg",5100,66,2
+nurburgring,gt3,6,"Fuchsröhre",6000,163,4
+nurburgring,gt3,7,"Adenauer Forst",6600,63,2
+nurburgring,gt3,8,"Metzgesfeld",7300,97,3
+nurburgring,gt3,9,"Kallenhard",8000,80,2
+nurburgring,gt3,10,"Wehrseifen",8800,57,2
+nurburgring,gt3,11,"Breidscheid",9500,60,2
+nurburgring,gt3,12,"Ex-Mühle",9800,69,2
+nurburgring,gt3,13,"Bergwerk",10900,77,2
+nurburgring,gt3,14,"Kesselchen",11800,124,3
+nurburgring,gt3,15,"Klostertal",13000,86,3
+nurburgring,gt3,16,"Karussell",13600,57,2
+nurburgring,gt3,17,"Hohe Acht",14500,97,3
+nurburgring,gt3,18,"Wippermann",15000,80,2
+nurburgring,gt3,19,"Brünnchen",15900,86,3
+nurburgring,gt3,20,"Pflanzgarten",16600,112,3
+nurburgring,gt3,21,"Schwalbenschwanz",17800,80,2
+nurburgring,gt3,22,"Galgenkopf",18900,112,3
+nurburgring,gt3,23,"Tiergarten",20400,117,3
+monaco,f1,1,"Sainte Devote",250,104,3
+monaco,f1,2,"Massenet",700,158,4
+monaco,f1,3,"Casino",850,118,3
+monaco,f1,4,"Mirabeau",1100,74,2
+monaco,f1,5,"Шпилька Fairmont",1250,48,1
+monaco,f1,6,"Portier",1500,88,2
+monaco,f1,7,"Нувель шикана",2050,84,2
+monaco,f1,8,"Tabac",2300,168,4
+monaco,f1,9,"Бассейн (Piscine)",2550,140,4
+monaco,f1,10,"La Rascasse",3000,68,2
+monaco,f1,11,"Anthony Noghes",3200,78,2
+monaco,hypercar,1,"Sainte Devote",250,86,3
+monaco,hypercar,2,"Massenet",700,124,4
+monaco,hypercar,3,"Casino",850,96,3
+monaco,hypercar,4,"Mirabeau",1100,65,2
+monaco,hypercar,5,"Шпилька Fairmont",1250,45,2
+monaco,hypercar,6,"Portier",1500,75,2
+monaco,hypercar,7,"Нувель шикана",2050,72,2
+monaco,hypercar,8,"Tabac",2300,131,4
+monaco,hypercar,9,"Бассейн (Piscine)",2550,112,3
+monaco,hypercar,10,"La Rascasse",3000,61,2
+monaco,hypercar,11,"Anthony Noghes",3200,68,2
+monaco,lmp2,1,"Sainte Devote",250,86,2
+monaco,lmp2,2,"Massenet",700,123,3
+monaco,lmp2,3,"Casino",850,96,3
+monaco,lmp2,4,"Mirabeau",1100,65,2
+monaco,lmp2,5,"Шпилька Fairmont",1250,44,1
+monaco,lmp2,6,"Portier",1500,75,2
+monaco,lmp2,7,"Нувель шикана",2050,72,2
+monaco,lmp2,8,"Tabac",2300,129,3
+monaco,lmp2,9,"Бассейн (Piscine)",2550,111,3
+monaco,lmp2,10,"La Rascasse",3000,60,2
+monaco,lmp2,11,"Anthony Noghes",3200,68,2
+monaco,lmp3,1,"Sainte Devote",250,81,2
+monaco,lmp3,2,"Massenet",700,114,3
+monaco,lmp3,3,"Casino",850,90,3
+monaco,lmp3,4,"Mirabeau",1100,62,2
+monaco,lmp3,5,"Шпилька Fairmont",1250,43,1
+monaco,lmp3,6,"Portier",1500,71,2
+monaco,lmp3,7,"Нувель шикана",2050,68,2
+monaco,lmp3,8,"Tabac",2300,120,3
+monaco,lmp3,9,"Бассейн (Piscine)",2550,104,3
+monaco,lmp3,10,"La Rascasse",3000,58,2
+monaco,lmp3,11,"Anthony Noghes",3200,65,2
+monaco,gt3,1,"Sainte Devote",250,76,2
+monaco,gt3,2,"Massenet",700,107,3
+monaco,gt3,3,"Casino",850,85,3
+monaco,gt3,4,"Mirabeau",1100,60,2
+monaco,gt3,5,"Шпилька Fairmont",1250,42,1
+monaco,gt3,6,"Portier",1500,68,2
+monaco,gt3,7,"Нувель шикана",2050,66,2
+monaco,gt3,8,"Tabac",2300,111,3
+monaco,gt3,9,"Бассейн (Piscine)",2550,97,3
+monaco,gt3,10,"La Rascasse",3000,56,2
+monaco,gt3,11,"Anthony Noghes",3200,62,2

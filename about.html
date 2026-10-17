@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>О сайте | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=732f3276">
+  <link rel="stylesheet" href="css/style.css?v=f51aa1b9">
 </head>
 <body class="photo-bg">
 <header class="top">
@@ -25,9 +25,15 @@
   <li>Длины трасс, названия поворотов и рекорды круга - официальные сайты трасс и Википедия.</li>
   <li>Скорости в апексах - по бортовым записям.</li>
   <li>Профили скорости, газа и тормоза рассчитываются скриптом js/data.js по скоростям в апексах.</li>
-</ul></div></section>
+  <li>Классы машин (F1, Hypercar, LMP2, LMP3, GT3): масса, мощность, торможение и сцепление в поворотах заданы по открытым техническим регламентам и подобраны так, чтобы расчётное время круга совпадало с реальными квалификациями в пределах нескольких процентов. Реальные ориентиры - протоколы и отчёты formula1.com, fiawec.com, europeanlemansseries.com, sportscar365.com, dailysportscar.com, gt-world-challenge-europe.com (ссылки - в таблицах на страницах трасс).</li>
+</ul>
+<h2>Параметры классов</h2>
+<table class="data">
+  <thead><tr><th>Класс</th><th class="num">Масса, кг</th><th class="num">Мощность, кВт</th><th class="num">Вт/кг</th><th class="num">Макс. скорость к F1</th><th class="num">Торможение, g (низкая / 300 км/ч)</th><th class="num">Скорость в апексе к F1 (60 / 180 / 300 км/ч)</th></tr></thead>
+  <tbody id="cls-params"></tbody>
+</table></div></section>
 <section class="sec alt"><div class="bar"><h2>Изображения</h2>
-<p class="note">Карты трасс - Wikimedia Commons: Монца, Спа, Сузука, Нордшляйфе, Монако - автор Will Pittenger (CC BY-SA 3.0; Нордшляйфе - общественное достояние); Сильверстоун - автор Antoine266 (CC BY-SA 4.0). Линии трасс в анимации построены по исходным SVG этих файлов.</p></div></section>
+<p class="note">Карты трасс - Wikimedia Commons: Монца, Спа, Сузука, Монако - автор Will Pittenger (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>); Сильверстоун - автор Antoine266 (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>); Нордшляйфе - &laquo;<a href="https://commons.wikimedia.org/wiki/File:Circuit_N%C3%BCrburgring-2013-Nordschleife.svg">Circuit Nürburgring-2013-Nordschleife.svg</a>&raquo;, автор Pitlane02 (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>), конфигурация с 2002 года, названия участков 2013 года. Цвета карт изменены (светлые линии на тёмно-синем фоне), изменённые изображения распространяются на тех же условиях. Линии трасс в анимации построены по исходным SVG этих файлов.</p></div></section>
 
 </main>
 <footer>
@@ -85,6 +91,10 @@ alt=""/></a><script>(function(d,s){d.getElementById("licnt3189").src=
     </div>
   </div>
 </footer>
-
+<script src="js/data.js"></script>
+<script>
+(function(){var tb=document.getElementById("cls-params");CLASS_ORDER.forEach(function(k){var c=CLASSES[k],v=300/3.6;var tr=document.createElement("tr");
+tr.innerHTML="<td>"+c.full+"</td><td class=num>"+c.mass+"</td><td class=num>"+c.power+"</td><td class=num>"+Math.round(c.power/c.mass*1000)+"</td><td class=num>"+c.top.toFixed(2)+"</td><td class=num>"+c.brk[0].toFixed(1)+" / "+(c.brk[0]+c.brk[1]*v*v).toFixed(1)+"</td><td class=num>"+[60,180,300].map(function(x){return gripRatio(c,x).toFixed(2);}).join(" / ")+"</td>";tb.appendChild(tr);});})();
+</script>
 </body>
 </html>

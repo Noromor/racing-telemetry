@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Телеметрия | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=732f3276">
+  <link rel="stylesheet" href="css/style.css?v=f51aa1b9">
 </head>
 <body class="photo-bg">
 <header class="top">
@@ -16,15 +16,25 @@
 </header>
 <section class="hero"><div class="bar">
   <h1>Сравнение телеметрии</h1>
-  <p class="lead">Скорость по дистанции круга для выбранных трасс.</p>
+  <p class="lead">Скорость по дистанции круга для выбранных трасс и классов машин.</p>
 </div></section>
 <main>
-<section class="sec "><div class="bar"><p>Отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видна разница между Монцей (длинные прямые, почти всё время выше 300 км/ч) и Монако. Нордшляйфе по длине несопоставима с остальными, её удобнее смотреть отдельно.</p>
-<p><label class="chk"><input type="checkbox" value="monza" checked> Монца</label><label class="chk"><input type="checkbox" value="spa"> Спа-Франкоршам</label><label class="chk"><input type="checkbox" value="suzuka"> Сузука</label><label class="chk"><input type="checkbox" value="silverstone"> Сильверстоун</label><label class="chk"><input type="checkbox" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label class="chk"><input type="checkbox" value="monaco" checked> Монако</label></p>
+<section class="sec "><div class="bar"><div class="sec-head"><h2>Трассы одного класса</h2></div>
+<p>Выберите класс машины и отметьте трассы, чтобы сравнить график скорости по дистанции. Хорошо видна разница между Монцей (длинные прямые) и Монако. Нордшляйфе по длине несопоставима с остальными, её удобнее смотреть отдельно.</p>
+<div class="cls-bar" id="cls-bar" role="group" aria-label="Класс машины"></div>
+<p><label class="chk"><input type="checkbox" name="trk" value="monza" checked> Монца</label><label class="chk"><input type="checkbox" name="trk" value="spa"> Спа-Франкоршам</label><label class="chk"><input type="checkbox" name="trk" value="suzuka"> Сузука</label><label class="chk"><input type="checkbox" name="trk" value="silverstone"> Сильверстоун</label><label class="chk"><input type="checkbox" name="trk" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label class="chk"><input type="checkbox" name="trk" value="monaco" checked> Монако</label></p>
 <canvas id="cmp" class="chart" style="height:340px"></canvas>
 <div class="legend" id="legend"></div></div></section>
-<section class="sec alt"><div class="bar"><h2>Сводная таблица</h2>
-<table class="data" id="sum"><tr><th>Трасса</th><th>Средняя скорость, км/ч</th><th>Мин. скорость, км/ч</th><th>Полный газ, %</th><th>Апексов в таблице</th></tr></table></div></section>
+<section class="sec alt"><div class="bar"><div class="sec-head"><h2>Классы на одной трассе</h2></div>
+<p>Профили скорости всех пяти классов на выбранной трассе: F1, Hypercar, LMP2, LMP3 и GT3. В медленных шпильках разница небольшая, на выходе из поворотов и в быстрых связках она растёт.</p>
+<p><label class="chk"><input type="radio" name="one" value="monza"> Монца</label><label class="chk"><input type="radio" name="one" value="spa" checked> Спа-Франкоршам</label><label class="chk"><input type="radio" name="one" value="suzuka"> Сузука</label><label class="chk"><input type="radio" name="one" value="silverstone"> Сильверстоун</label><label class="chk"><input type="radio" name="one" value="nurburgring"> Нюрбургринг Нордшляйфе</label><label class="chk"><input type="radio" name="one" value="monaco"> Монако</label></p>
+<canvas id="cls-cmp" class="chart" style="height:340px"></canvas>
+<div class="legend" id="cls-legend"></div></div></section>
+<section class="sec "><div class="bar"><h2>Сводная таблица: <span id="sum-cls">F1</span></h2>
+<table class="data" id="sum"><thead><tr><th>Трасса</th><th class="num">Средняя скорость, км/ч</th><th class="num">Мин. скорость, км/ч</th><th class="num">Полный газ, %</th><th class="num">Круг, расчёт</th><th class="num">Апексов</th></tr></thead><tbody></tbody></table>
+<h2 style="margin-top:40px">Время круга по классам (расчёт)</h2>
+<table class="data" id="laps"><thead><tr><th>Трасса</th><th class="num">F1</th><th class="num">Hypercar</th><th class="num">LMP2</th><th class="num">LMP3</th><th class="num">GT3</th></tr></thead><tbody></tbody></table>
+<p class="note">Расчёт по модели сайта. Сравнение с реальными кругами квалификаций и источники - на страницах трасс; все значения в CSV: <a href="files/lap_times.csv" download>lap_times.csv</a>.</p></div></section>
 
 </main>
 <footer>
@@ -85,44 +95,60 @@ alt=""/></a><script>(function(d,s){d.getElementById("licnt3189").src=
 <script src="js/data.js"></script>
 <script src="js/charts.js"></script>
 <script>
-var COLORS = {monza:"#d7192b", spa:"#0b1f3f", suzuka:"#e07b00", silverstone:"#1f8a5b", nurburgring:"#6b4fa0", monaco:"#4a90d9"};
+var COLORS = {monza:"#ff3b4e", spa:"#4fc3f7", suzuka:"#ffa94d", silverstone:"#5fd38d", nurburgring:"#b39dff", monaco:"#ffd23f"};
+var cls = "f1", TELC = {};
+function tel(id, k) { var key = id + "/" + k; return TELC[key] || (TELC[key] = makeTelemetry(TRACKS[id], k)); }
 function redraw() {
-  var cv = document.getElementById("cmp");
-  var boxes = document.querySelectorAll("input[type=checkbox]");
-  var dpr = window.devicePixelRatio || 1;
-  cv.width = cv.clientWidth * dpr; cv.height = cv.clientHeight * dpr;
-  var c = cv.getContext("2d"); c.scale(dpr, dpr);
-  var w = cv.clientWidth, h = cv.clientHeight, maxY = 350, maxX = 1000;
-  for (var q = 0; q < boxes.length; q++) if (boxes[q].checked) maxX = Math.max(maxX, TRACKS[boxes[q].value].length + 100);
-  c.font = "11px Arial"; c.fillStyle = "#5b6b85"; c.strokeStyle = "#e3e8f0";
-  for (var y = 0; y <= maxY; y += 50) { var yy = h - 20 - y / maxY * (h - 30); c.beginPath(); c.moveTo(40, yy); c.lineTo(w, yy); c.stroke(); c.fillText(y, 8, yy + 3); }
-  var stX = maxX > 10000 ? 2000 : 1000;
-  for (var x = 0; x <= maxX; x += stX) c.fillText(x / 1000 + " км", 40 + x / maxX * (w - 45) - 8, h - 5);
-  var leg = "";
+  var boxes = document.querySelectorAll("input[name=trk]"), ser = [], leg = "", maxX = 1000;
   for (var b = 0; b < boxes.length; b++) {
     if (!boxes[b].checked) continue;
-    var id = boxes[b].value, tel = makeTelemetry(TRACKS[id]);
-    c.strokeStyle = COLORS[id]; c.lineWidth = 1.6; c.beginPath();
-    for (var i = 0; i < tel.length; i++) {
-      var px = 40 + tel[i].d / maxX * (w - 45), py = h - 20 - tel[i].speed / maxY * (h - 30);
-      if (i) c.lineTo(px, py); else c.moveTo(px, py);
-    }
-    c.stroke();
-    leg += '<span><i style="background:' + COLORS[id] + '"></i>' + TRACKS[id].name + '</span>';
+    var id = boxes[b].value, d = tel(id, cls);
+    maxX = Math.max(maxX, TRACKS[id].length + 100);
+    ser.push({ data: d, color: COLORS[id], width: 1.6 });
+    leg += '<span><i style="background:' + COLORS[id] + '"></i>' + TRACKS[id].name + " - " + fmtLap(lapTime(d)) + "</span>";
   }
+  if (!ser.length) ser = [{ data: [{ d: 0, speed: 0 }, { d: 1000, speed: 0 }], color: "rgba(0,0,0,0)" }];
+  drawChart(document.getElementById("cmp"), ser, "speed", null, 350, "Скорость, км/ч - " + CLASSES[cls].name, null, maxX);
   document.getElementById("legend").innerHTML = leg;
 }
-var boxes = document.querySelectorAll("input[type=checkbox]");
-for (var b = 0; b < boxes.length; b++) boxes[b].onchange = redraw;
-redraw();
-var tb = document.getElementById("sum");
-for (var id in TRACKS) {
-  var tel = makeTelemetry(TRACKS[id]), s = 0, mn = 999, f = 0;
-  for (var i = 0; i < tel.length; i++) { s += tel[i].speed; if (tel[i].speed < mn) mn = tel[i].speed; if (tel[i].throttle == 100) f++; }
-  var tr = document.createElement("tr");
-  tr.innerHTML = "<td>" + TRACKS[id].name + "</td><td>" + Math.round(s / tel.length) + "</td><td>" + mn + "</td><td>" + Math.round(f / tel.length * 100) + "</td><td>" + TRACKS[id].apex.length + "</td>";
-  tb.appendChild(tr);
+function redraw2() {
+  var id = document.querySelector("input[name=one]:checked").value, ser = [], leg = "";
+  CLASS_ORDER.forEach(function (k) {
+    var d = tel(id, k); ser.push({ data: d, color: CLASSES[k].color, width: 1.5 });
+    leg += '<span><i style="background:' + CLASSES[k].color + '"></i>' + CLASSES[k].name + " - " + fmtLap(lapTime(d)) + "</span>";
+  });
+  drawChart(document.getElementById("cls-cmp"), ser, "speed", null, 350, "Скорость, км/ч - " + TRACKS[id].name, TRACKS[id].sectors);
+  document.getElementById("cls-legend").innerHTML = leg;
 }
+function summary() {
+  var tb = document.querySelector("#sum tbody"); tb.innerHTML = "";
+  document.getElementById("sum-cls").textContent = CLASSES[cls].full;
+  for (var id in TRACKS) {
+    var d = tel(id, cls), s = 0, mn = 999, f = 0;
+    for (var i = 0; i < d.length; i++) { s += d[i].speed; if (d[i].speed < mn) mn = d[i].speed; if (d[i].throttle == 100) f++; }
+    var tr = document.createElement("tr");
+    tr.innerHTML = '<td><a href="tracks/' + id + '.html#' + cls + '">' + TRACKS[id].name + '</a></td><td class="num">' + Math.round(s / d.length) + '</td><td class="num">' + mn + '</td><td class="num">' + Math.round(f / d.length * 100) + '</td><td class="num">' + fmtLap(lapTime(d)) + '</td><td class="num">' + TRACKS[id].apex.length + "</td>";
+    tb.appendChild(tr);
+  }
+}
+var bar = document.getElementById("cls-bar");
+CLASS_ORDER.forEach(function (k) {
+  var b = document.createElement("button"); b.type = "button"; b.setAttribute("data-cls", k);
+  b.innerHTML = '<i style="background:' + CLASSES[k].color + '"></i>' + CLASSES[k].name;
+  b.onclick = function () { cls = k; bar.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x.getAttribute("data-cls") === k ? "true" : "false"); }); redraw(); summary(); };
+  bar.appendChild(b);
+});
+bar.querySelector("button").setAttribute("aria-pressed", "true");
+document.querySelectorAll("input[name=trk]").forEach(function (b) { b.onchange = redraw; });
+document.querySelectorAll("input[name=one]").forEach(function (b) { b.onchange = redraw2; });
+redraw(); redraw2(); summary();
+var lt = document.querySelector("#laps tbody");
+for (var id in TRACKS) {
+  var tr = document.createElement("tr"), h = '<td><a href="tracks/' + id + '.html#all">' + TRACKS[id].name + "</a></td>";
+  CLASS_ORDER.forEach(function (k) { h += '<td class="num">' + fmtLap(lapTime(tel(id, k))) + "</td>"; });
+  tr.innerHTML = h; lt.appendChild(tr);
+}
+var rt; window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(function () { redraw(); redraw2(); }, 150); });
 </script>
 </body>
 </html>

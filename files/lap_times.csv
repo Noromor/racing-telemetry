@@ -1,0 +1,31 @@
+track,class,model_lap_s,model_lap,ref_lap_s,ref_lap_desc,ref_url
+monza,f1,80.6,1:20.6,81.786,"П. Гасли, Alpine, квалификация Гран-при Италии 2026",https://www.formula1.com/en/results/2026/races/1293/italy/qualifying
+monza,hypercar,92.9,1:32.9,95.358,"К. Кобаяси, Toyota GR010, WEC 6 ч Монцы 2023",https://www.fiawec.com/en/news/toyota-just-shade-ferrari-for-monza-pole/7740
+monza,lmp2,94.0,1:34.0,98.032,"М. Беш, Oreca 07, ELMS 4 ч Монцы 2022",https://sportscar365.com/lemans/elms/beche-charges-to-monza-pole-for-tds-racing-x-vaillante
+monza,lmp3,101.8,1:41.8,103.627,"М. Якобсен, Ligier JS P320, ELMS 4 ч Монцы 2022",https://sportscar365.com/lemans/elms/beche-charges-to-monza-pole-for-tds-racing-x-vaillante
+monza,gt3,106.2,1:46.2,105,"Ж. Гунон, Mercedes-AMG GT3, GT World Challenge Монца 2025",https://www.gt-world-challenge-europe.com/news/3007/qualifying-getspeed-leads-mercedes-amg-one-two-at-monza
+spa,f1,102.8,1:42.8,104.361,"К. Антонелли, Mercedes, квалификация Гран-при Бельгии 2026",https://www.formula1.com/en/results/2026/awards/pole-positions
+spa,hypercar,117.8,1:57.8,120.653,"М. Якобсен, Peugeot 9X8, WEC 6 ч Спа 2026",https://en.wikipedia.org/wiki/2026_6_Hours_of_Spa-Francorchamps
+spa,lmp2,119.0,1:59.0,121.253,"Л. Делетраз, Oreca 07, ELMS 4 ч Спа 2024",https://sportscar365.com/lemans/elms/deletraz-takes-4h-spa-pole-in-red-flagged-qualifying/
+spa,lmp3,128.6,2:08.6,131.847,"Г. Жюльен, Ligier JS P320, ELMS 4 ч Спа 2024",https://sportscar365.com/lemans/elms/deletraz-takes-4h-spa-pole-in-red-flagged-qualifying/
+spa,gt3,134.0,2:14.0,136.612,"А. Давид, Lexus RC F LMGT3, WEC 6 ч Спа 2026",https://en.wikipedia.org/wiki/2026_6_Hours_of_Spa-Francorchamps
+suzuka,f1,86.3,1:26.3,88.778,"К. Антонелли, Mercedes, квалификация Гран-при Японии 2026",https://www.formula1.com/en/results/2026/awards/pole-positions
+suzuka,hypercar,98.8,1:38.8,,"",
+suzuka,lmp2,99.9,1:39.9,,"",
+suzuka,lmp3,108.0,1:48.0,,"",
+suzuka,gt3,112.1,1:52.1,120.455,"А. Фарфус, BMW M6 GT3, Suzuka 10 Hours 2019",https://sportscar365.com/sro/igtc/farfus-takes-suzuka-10h-pole
+silverstone,f1,85.3,1:25.3,88.111,"К. Антонелли, Mercedes, квалификация Гран-при Великобритании 2026",https://www.formula1.com/en/results/2026/awards/pole-positions
+silverstone,hypercar,97.9,1:37.9,,"",
+silverstone,lmp2,99.0,1:39.0,102.343,"Э. Массон, Oreca 07, ELMS 4 ч Сильверстоуна 2025",https://www.dailysportscar.com/2025/09/13/masson-powers-vds-panis-racing-to-silverstone-pole.html
+silverstone,lmp3,107.2,1:47.2,113.038,"Г. Пиблс, Duqueine D09, ELMS 4 ч Сильверстоуна 2025",https://www.dailysportscar.com/2025/09/13/masson-powers-vds-panis-racing-to-silverstone-pole.html
+silverstone,gt3,111.3,1:51.3,116.569,"М. Кирххёфер, McLaren 720S GT3 Evo, British GT Silverstone 500 2025",https://www.dailysportscar.com/2025/04/26/optimum-mclaren-takes-silverstone-500-pole.html
+nurburgring,f1,319.7,5:19.7,,"",
+nurburgring,hypercar,365.5,6:05.5,,"",
+nurburgring,lmp2,369.1,6:09.1,,"",
+nurburgring,lmp3,399.0,6:39.0,,"",
+nurburgring,gt3,413.8,6:53.8,,"",
+monaco,f1,73.8,1:13.8,72.051,"К. Антонелли, Mercedes, квалификация Гран-при Монако 2026",https://www.formula1.com/en/results/2026/awards/pole-positions
+monaco,hypercar,83.4,1:23.4,,"",
+monaco,lmp2,83.9,1:23.9,,"",
+monaco,lmp3,88.3,1:28.3,,"",
+monaco,gt3,92.0,1:32.0,,"",

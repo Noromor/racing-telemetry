@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Сузука | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="../css/style.css?v=732f3276">
+  <link rel="stylesheet" href="../css/style.css?v=f51aa1b9">
 </head>
 <body class="photo-bg" data-track="suzuka">
 <header class="top">
@@ -33,7 +33,7 @@
       <path class="road-in" d=""></path>
       <circle class="car" r="9" cx="-20" cy="-20"></circle>
     </svg>
-    <p class="note">Линия трассы снята с исходного SVG на Wikimedia Commons. Красная точка - машина, движется по ходу гонки со скоростью из графика ниже (ускорено). Сейчас: <b id="cur-speed">0</b> км/ч. Жёлтые точки - апексы.</p>
+    <p class="note">Линия трассы снята с исходного SVG на Wikimedia Commons. Цветная точка - машина выбранного класса, движется по ходу гонки со скоростью из графика ниже (ускорено); в режиме &laquo;Все классы&raquo; едут все пять. Сейчас (<span class="cls-name-1">F1</span>): <b id="cur-speed">0</b> км/ч. Жёлтые точки - апексы.</p>
   </div>
   <div>
     <h2>О трассе</h2>
@@ -45,23 +45,33 @@
       <tr><th>Рекорд круга</th><td>1:30.983<br><span class="small">Л. Хэмилтон, Mercedes, 2019</span></td></tr>
       <tr><th>Полный газ</th><td><span id="full-thr">-</span> % дистанции</td></tr>
       <tr><th>Торможение</th><td><span id="brk-share">-</span> % дистанции</td></tr>
+      <tr><th>Круг, расчёт</th><td><span id="lap-model">-</span> (<span class="cls-name-1">F1</span>)</td></tr>
     </table>
   </div>
 </div></div></section>
-<section class="sec alt"><div class="bar"><h2>Карта трассы</h2>
-<img class="trackimg" src="../img/tracks/suzuka.png" alt="Карта трассы Сузука">
-<p class="note">Карта: &laquo;Suzuka circuit map--2005.svg&raquo;, автор Will Pittenger, Wikimedia Commons, CC BY-SA 3.0.</p></div></section>
-<section class="sec "><div class="bar"><h2>Апексы</h2>
+<section class="sec "><div class="bar"><div class="sec-head"><h2 id="classes">Класс машины</h2></div>
+<div class="cls-bar" id="cls-bar" role="group" aria-label="Класс машины"></div>
+<p class="cls-info" id="cls-info"></p>
+<table class="data laps">
+  <thead><tr><th>Класс</th><th class="num">Макс. скорость, км/ч</th><th class="num">Вт/кг</th><th class="num">Круг, расчёт</th><th class="num">К F1</th><th>Реальный ориентир (лучший круг квалификации)</th></tr></thead>
+  <tbody id="lap-table"></tbody>
+</table>
+<p class="note">WEC и ELMS в Сузуке не выступают; для GT3 ориентир - Suzuka 10 Hours 2019. Расчёт - по модели сайта (js/data.js): скорости в апексах F1 пересчитываются для каждого класса по сцеплению, затем разгон ограничен мощностью и сопротивлением воздуха, торможение - сцеплением и прижимной силой. Разница с реальным кругом в несколько процентов нормальна: модель не учитывает рельеф, ветер, ограничения BoP и расход энергии.</p></div></section>
+<section class="sec alt"><div class="bar"><h2>Телеметрия круга: <span class="cls-name">F1</span></h2>
+<div class="legend" id="cls-legend"></div>
+<canvas id="c-speed" class="chart" style="height:280px"></canvas>
+<canvas id="c-thr" class="chart" style="height:130px"></canvas>
+<canvas id="c-brk" class="chart" style="height:130px"></canvas>
+<p class="note">Пунктир - границы секторов. Сектор 1 начинается от линии старта.</p></div></section>
+<section class="sec "><div class="bar"><h2>Апексы: <span class="cls-name">F1</span></h2>
 <table class="data">
-  <thead><tr><th>№</th><th>Поворот</th><th>Дистанция, м</th><th>Скорость в апексе, км/ч</th><th>Передача</th></tr></thead>
+  <thead id="apex-head"></thead>
   <tbody id="apex-table"></tbody>
 </table>
-<p>Данные в CSV: <a href="../files/apex_suzuka.csv" download>apex_suzuka.csv</a>, телеметрия круга - <a href="../files/telemetry_suzuka.csv" download>telemetry_suzuka.csv</a>.</p></div></section>
-<section class="sec alt"><div class="bar"><h2>Телеметрия круга</h2>
-<canvas id="c-speed" class="chart"></canvas>
-<canvas id="c-thr" class="chart" style="height:120px"></canvas>
-<canvas id="c-brk" class="chart" style="height:120px"></canvas>
-<p class="note">Пунктир - границы секторов. Сектор 1 начинается от линии старта.</p></div></section>
+<p>Данные в CSV: апексы всех классов - <a href="../files/apex_suzuka.csv" download>apex_suzuka.csv</a>; телеметрия круга всех классов в одном файле - <a href="../files/telemetry_suzuka.csv" download>telemetry_suzuka.csv</a>; по классам: <a href="../files/telemetry_suzuka_f1.csv" download>F1</a>, <a href="../files/telemetry_suzuka_hypercar.csv" download>Hypercar</a>, <a href="../files/telemetry_suzuka_lmp2.csv" download>LMP2</a>, <a href="../files/telemetry_suzuka_lmp3.csv" download>LMP3</a>, <a href="../files/telemetry_suzuka_gt3.csv" download>GT3</a>.</p></div></section>
+<section class="sec alt"><div class="bar"><h2>Карта трассы</h2>
+<img class="trackimg" src="../img/tracks/suzuka.png" alt="Карта трассы Сузука">
+<p class="note">Карта: &laquo;<a href="https://commons.wikimedia.org/wiki/File:Suzuka_circuit_map--2005.svg">Suzuka circuit map--2005.svg</a>&raquo;, автор Will Pittenger, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>; цвета изменены под оформление сайта (светлые линии на тёмно-синем).</p></div></section>
 
 </main>
 <footer>
