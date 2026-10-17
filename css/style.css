@@ -168,7 +168,7 @@ table.teams td:nth-child(2) { font-weight: 600; color: #fff; }
 
 /* ===== фон-фото: общие страницы (field.jpg под тёмно-синей вуалью) ===== */
 body.photo-bg, body.home-page { background: #0b1a33; color: #e6ebf3; }
-body.photo-bg::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+body.photo-bg::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; z-index: -1; pointer-events: none;
   background: linear-gradient(180deg, rgba(11,26,51,.86), rgba(11,26,51,.8) 50%, rgba(11,26,51,.9)), url("../img/field.jpg") center / cover no-repeat; }
 .photo-bg .hero, .home-page .hero { background: transparent; }
 .photo-bg .sec, .home-page .sec { background: transparent; border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -192,8 +192,8 @@ body.photo-bg::before { content: ""; position: fixed; inset: 0; z-index: -1; poi
 .photo-bg .foot-nav a, .home-page .foot-nav a, footer .counters a.li-link { color: #c9d3e6; border: 0; }
 
 /* ===== главная: фиксированная сцена из двух фото, связанная с прокруткой ===== */
-.stage { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.ph { position: absolute; inset: -2% -4%; will-change: transform, opacity; }
+.stage { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; height: 100lvh; z-index: -1; overflow: hidden; pointer-events: none; contain: strict; }
+.ph { position: absolute; top: -2%; left: -4%; width: 108%; height: 104%; will-change: transform, opacity; backface-visibility: hidden; transform: translate3d(0,0,0); transition: none; }
 .ph-img { position: absolute; inset: 0; background: center / cover no-repeat; }
 .ph-hero .ph-img { background-image: url("../img/hero.jpg"); }
 .ph-field { opacity: 0; transform: translate3d(28%,0,0); }
@@ -214,7 +214,7 @@ body.photo-bg::before { content: ""; position: fixed; inset: 0; z-index: -1; poi
 .st-r i { animation: stripe-in .9s cubic-bezier(.2,.8,.3,1) both; }
 .st-r .s-red { animation-delay: .15s; } .st-r .s-l1 { animation-delay: .25s; } .st-r .s-l2 { animation-delay: .35s; }
 @keyframes stripe-in { from { transform: translateX(120vw) skewX(-20deg); } to { transform: skewX(-20deg); } }
-.home-page .hero-main { min-height: calc(100vh - 67px); display: flex; align-items: center; }
+.home-page .hero-main { min-height: calc(100vh - 67px); min-height: calc(100svh - 67px); display: flex; align-items: center; }
 .home-page .hero-main .bar { position: relative; }
 .home-page .quote, .home-page .hero-stack a { text-shadow: 0 2px 24px rgba(0,0,0,.45); }
 .home-page .attr { color: #c9d3e6; }
