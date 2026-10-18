@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>О сайте | Апекс-лог</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="css/style.css?v=351a523d">
+  <link rel="stylesheet" href="css/style.css?v=32f430cb">
 </head>
 <body class="photo-bg">
 <header class="top">
@@ -31,7 +31,9 @@
 <table class="data">
   <thead><tr><th>Класс</th><th class="num">Масса, кг</th><th class="num">Мощность, кВт</th><th class="num">Вт/кг</th><th class="num">Макс. скорость к F1</th><th class="num">Торможение, g (низкая / 300 км/ч)</th><th class="num">Скорость в апексе к F1 (60 / 180 / 300 км/ч)</th></tr></thead>
   <tbody id="cls-params"></tbody>
-</table></div></section>
+</table>
+<h2 id="stats">Статистика посещений</h2>
+<p>На страницах установлены счётчики LiveInternet и Рамблер/Топ-100. Они используют cookie и учитывают обезличенные сведения о посещениях: число просмотров и посетителей, источники переходов, тип устройства и браузера. Эти данные нужны только для учебной работы по веб-аналитике; сам сайт персональных данных не запрашивает и не хранит. Отключить учёт можно, запретив cookie сторонних сайтов в настройках браузера.</p></div></section>
 <section class="sec alt"><div class="bar"><h2>Изображения</h2>
 <p class="note">Карты трасс - Wikimedia Commons: Монца, Спа, Сузука, Монако - автор Will Pittenger (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>); Сильверстоун - автор Antoine266 (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>); Нордшляйфе - &laquo;<a href="https://commons.wikimedia.org/wiki/File:Circuit_N%C3%BCrburgring-2013-Nordschleife.svg">Circuit Nürburgring-2013-Nordschleife.svg</a>&raquo;, автор Pitlane02 (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>), конфигурация с 2002 года, названия участков 2013 года. Цвета карт изменены (светлые линии на тёмно-синем фоне), изменённые изображения распространяются на тех же условиях. Линии трасс в анимации построены по исходным SVG этих файлов.</p></div></section>
 
@@ -44,6 +46,7 @@
       <p class="copy">Зазуля Никита, 2026. Учебный проект</p>
     </div>
     <div class="foot-nav"><a href="index.html">Главная</a><a href="tracks.html">Трассы</a><a href="telemetry.html">Телеметрия</a><a href="apex.html">Апексы</a><a href="teams.html">Команды</a><a href="schedule.html">Расписание</a><a href="simracing.html">Симрейсинг</a><a href="files.html">Файлы</a><a href="about.html" class="active">О сайте</a></div>
+    <p class="stat-note">Статистика посещений собирается в учебных целях.</p>
     <div class="counters">
       <!--LiveInternet counter--><a href="https://www.liveinternet.ru/click"
 target="_blank"><img id="licnt3189" width="88" height="31" style="border:0" 
@@ -91,10 +94,17 @@ alt=""/></a><script>(function(d,s){d.getElementById("licnt3189").src=
     </div>
   </div>
 </footer>
+<div class="notice" id="notice" role="region" aria-label="Статистика посещений" hidden>
+  <div class="bar">
+    <p>Мы используем cookie и счётчики LiveInternet и Рамблер/Топ-100 для сбора обезличенной статистики посещений в рамках учебного проекта. <a href="about.html#stats">Подробнее</a></p>
+    <button type="button">Понятно</button>
+  </div>
+</div>
 <script src="js/data.js?v=c1321207"></script>
 <script>
 (function(){var tb=document.getElementById("cls-params");CLASS_ORDER.forEach(function(k){var c=CLASSES[k],v=300/3.6;var tr=document.createElement("tr");
 tr.innerHTML="<td>"+c.full+"</td><td class=num>"+c.mass+"</td><td class=num>"+c.power+"</td><td class=num>"+Math.round(c.power/c.mass*1000)+"</td><td class=num>"+c.top.toFixed(2)+"</td><td class=num>"+c.brk[0].toFixed(1)+" / "+(c.brk[0]+c.brk[1]*v*v).toFixed(1)+"</td><td class=num>"+[60,180,300].map(function(x){return gripRatio(c,x).toFixed(2);}).join(" / ")+"</td>";tb.appendChild(tr);});})();
 </script>
+<script src="js/notice.js?v=b86e2091"></script>
 </body>
 </html>
